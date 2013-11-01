@@ -11,6 +11,8 @@ public class SoundTrigger : MonoBehaviour {
 		//...
 	}
 	
+	public float maxImpact;
+	
 	private AudioSource source;
 	
 	public Type soundType;
@@ -23,13 +25,23 @@ public class SoundTrigger : MonoBehaviour {
 	/**
 	 * triggers sound on collision with player
 	 */
-	private void OnColliderEnter(Collision c)
+	private void OnCollisionEnter(Collision c)
 	{
-		source.volume = c.relativeVelocity.normalized.magnitude;
+		float impactForce = c.relativeVelocity.magnitude;
+		if(impactForce >maxImpact){
+			impactForce = maxImpact;	
+		}
+		source.volume = impactForce/maxImpact;
 		if(c.collider.tag == "Player")
 		{
 			source.Play();
 			Closet.GetInstance().onClosetSound(soundType, source.volume * volumeDamper);
 		}
+		else if(c.collider.tag == "DynamicObject")
+		{
+			
+		}
 	}
+	
+	
 }
