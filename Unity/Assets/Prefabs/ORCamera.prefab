@@ -111,6 +111,9 @@ GameObject:
   - 114: {fileID: 11400008}
   - 20: {fileID: 2000004}
   - 114: {fileID: 11400024}
+  - 81: {fileID: 8100002}
+  - 165: {fileID: 16500000}
+  - 169: {fileID: 16900000}
   m_Layer: 8
   m_Name: ORCamera
   m_TagString: Untagged
@@ -359,6 +362,13 @@ AudioListener:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100006}
+  m_Enabled: 0
+--- !u!81 &8100002
+AudioListener:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100010}
   m_Enabled: 1
 --- !u!108 &10800000
 Light:
@@ -958,6 +968,35 @@ FixedJoint:
   m_ConnectedBody: {fileID: 5400000}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
+--- !u!165 &16500000
+AudioHighPassFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100010}
+  m_Enabled: 0
+  m_CutoffFrequency: 10
+  m_HighpassResonanceQ: 1
+--- !u!169 &16900000
+AudioLowPassFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100010}
+  m_Enabled: 0
+  serializedVersion: 3
+  m_CutoffFrequency: 349.999664
+  m_LowpassResonanceQ: 1
+  lowpassLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: .984090924
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
