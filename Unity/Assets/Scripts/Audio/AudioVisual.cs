@@ -86,7 +86,11 @@ public class AudioVisual : MonoBehaviour {
             if (float.IsInfinity(numberleft[i]*30) || float.IsNaN(numberleft[i]*30)){
 
             }else{
+<<<<<<< HEAD
+				//iTween.ScaleUpdate(thebarsleft[i], new Vector3(1,yConst+numberleft[i]*30*yScale*Mathf.Pow(1.05f,i),1), 0.05f);
+=======
 //				iTween.ScaleUpdate(thebarsleft[i], new Vector3(1,yConst+numberleft[i]*30*yScale*Mathf.Pow(1.05f,i),1), 0.05f);
+>>>>>>> 90ff860160a67572783ca3e173124696df15ebe9
                // thebarsleft[i].transform.localScale = new Vector3(width, yConst+numberleft[i]*30*yScale,0.2f);
 				//iTween.ScaleUpdate(thebarsright[i], new Vector3(1,yConst+numberleft[i]*30*yScale*i,1), 0.2f);
                // thebarsright[i].transform.localScale = new Vector3(width, yConst+numberright[i]*30*yScale,0.2f);  
