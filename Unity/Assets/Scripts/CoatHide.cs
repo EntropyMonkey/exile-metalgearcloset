@@ -29,7 +29,7 @@ public class CoatHide : MonoBehaviour {
 		coatRight = transform.Find("coatRight");
 		coatRight.localPosition += Vector3.right * initialCoatLeftX;
 		
-		ovrController = transform.parent.parent.GetComponent<OVRCameraController>();
+		ovrController = transform.parent.GetComponent<OVRCameraController>();
 		isHiding = false;
 	}
 	
