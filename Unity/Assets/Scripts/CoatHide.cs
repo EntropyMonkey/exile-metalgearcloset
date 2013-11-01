@@ -24,12 +24,12 @@ public class CoatHide : MonoBehaviour {
 	public float maxCoatRightX;
 
 	void Start () {
-		coatLeft = transform.Find("cloakLeft");
+		coatLeft = transform.Find("coatLeft");
 		coatLeft.localPosition += Vector3.left * initialCoatLeftX;
-		coatRight = transform.Find("cloakRight");
+		coatRight = transform.Find("coatRight");
 		coatRight.localPosition += Vector3.right * initialCoatLeftX;
 		
-		ovrController = GetComponent<OVRCameraController>();
+		ovrController = transform.parent.parent.GetComponent<OVRCameraController>();
 		isHiding = false;
 	}
 	
@@ -48,12 +48,13 @@ public class CoatHide : MonoBehaviour {
 				coatLeft.localPosition += Vector3.right * hidingSpeed;
 			if(rightOpen)
 				coatRight.localPosition += Vector3.left * hidingSpeed;
-			if(!leftOpen && !rightOpen)
+			if(!leftOpen && !rightOpen && Closet.GetInstance().onPlayerHidden != null)
 				Closet.GetInstance().onPlayerHidden();
 		}
 		else
 		{
-			Closet.GetInstance().onPlayerUnhidden();
+			if(Closet.GetInstance().onPlayerUnhidden != null)
+				Closet.GetInstance().onPlayerUnhidden();
 			
 			if(coatLeft.localPosition.x <= initialCoatLeftX)
 				coatLeft.localPosition += Vector3.left * hidingSpeed;

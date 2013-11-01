@@ -11,12 +11,17 @@ public class Closet : MonoBehaviour
 	public System.Action onPlayerUnhidden;
 
 	private static Closet instance;
-	public static Closet GetInstance() { return instance; }
+	public static Closet GetInstance() {
+		if(!instance){
+			instance = new GameObject("Closet", typeof(Closet)).GetComponent<Closet>();
+		}
+		return instance; 
+	}
 
 	private void Awake()
 	{
-		if (!instance)
-			instance = this;
+		if (!instance) instance = this;
+		else Destroy(gameObject);
 	}
 
 	// Use this for initialization
