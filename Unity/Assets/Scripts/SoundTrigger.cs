@@ -4,13 +4,10 @@ using System.Collections;
 public class SoundTrigger : MonoBehaviour {
 	public enum Type
 	{
-		Aslan, // default ;)
+		Aslan,
 		Clothing,
 		FallingObject,
-		Paper,
-		Wood,
-		Door,
-		Breathe,
+		
 		//...
 	}
 	
