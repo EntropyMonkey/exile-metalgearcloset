@@ -29,13 +29,25 @@ public class Spider : MonoBehaviour {
 	void Update () {
 		if(!alive)
 		{
+			audio.Stop();
 			transform.Translate(Vector3.down * movementSpeed * 10.0f);
 			StartCoroutine(WaitDestroy());
 		}
 		else if(move)
+		{
+			if(!audio.isPlaying) audio.Play();
 			transform.Translate(Vector3.down * movementSpeed);
+			
+		}
 		else if(rotate)
+		{
+			if(!audio.isPlaying) audio.Play();
 			transform.Rotate(new Vector3(0,0,rotationSpeed));
+		}
+		else
+		{
+			audio.Stop();
+		}
 	}
 	
 	private IEnumerator PerformRun()

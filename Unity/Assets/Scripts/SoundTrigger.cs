@@ -40,9 +40,10 @@ public class SoundTrigger : MonoBehaviour {
 			source.Play();
 			Closet.GetInstance().onClosetSound(soundType, source.volume * volumeDamper);
 		}
-		else if(c.collider.tag == "DynamicObject")
+		else if(!GetComponent<ClothRenderer>() && c.collider.tag == "DynamicObject")
 		{
-			
+			source.Play();
+			Closet.GetInstance().onClosetSound(soundType, source.volume * volumeDamper);
 		}
 	}
 	
