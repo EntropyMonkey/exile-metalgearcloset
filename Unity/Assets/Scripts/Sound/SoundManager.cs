@@ -17,9 +17,23 @@ public class SoundManager : MonoBehaviour
 
 	private HeartBeat heartBeat;
 
-	// Use this for initialization
-	void Start()
+	// Singleton
+	public static SoundManager Instance
 	{
+		get
+		{
+			if (instance == null)
+				instance = new GameObject("SoundManager").AddComponent<SoundManager>();
+			return instance;
+		}
+	}
+	private static SoundManager instance;
+
+	// Use this for initialization
+	void Awake()
+	{
+		instance = this;
+
 		usedAudioSources = new List<AudioSource>();
 		unusedAudioSources = new List<AudioSource>();
 
@@ -34,17 +48,20 @@ public class SoundManager : MonoBehaviour
 	}
 
 	// play sound immediately, using cached audio sources
-	public void PlaySound(AudioClip clip, Transform t = null)
+	public void PlaySound(AudioClip clip, Transform t = null, bool followTransform = false, System.Action OnDoneEventHandler = null)
 	{
-		AudioSource source = GetFreeAudioSource(t != null ? t.gameObject : gameObject);
+		AudioSource source = GetFreeAudioSource();
+
+		if (followTransform && t != null)
+			StartCoroutine(MoveWithGO(source.gameObject, t.gameObject));
 
 		source.clip = clip;
 		source.Play();
 
-		StartCoroutine(RemoveFromUsedSources(source));
+		StartCoroutine(RemoveFromUsedSources(source, OnDoneEventHandler));
 	}
 
-	AudioSource GetFreeAudioSource(GameObject carrier)
+	AudioSource GetFreeAudioSource()
 	{
 		AudioSource source;
 		// get source from pool
@@ -55,16 +72,25 @@ public class SoundManager : MonoBehaviour
 		}
 		else
 		{
-			source = carrier.AddComponent<AudioSource>();
+			source = new GameObject("AudioSource").AddComponent<AudioSource>();
 		}
 		usedAudioSources.Add(source);
-
-		// TODO remove used audio sources from old carrier
 
 		return source;
 	}
 
-	IEnumerator RemoveFromUsedSources(AudioSource source)
+	IEnumerator MoveWithGO(GameObject follower, GameObject lead)
+	{
+		float currentTime = follower.audio.clip.length;
+		while (currentTime > 0)
+		{
+			currentTime -= Time.deltaTime;
+			follower.transform.position = lead.transform.position;
+			yield return new WaitForEndOfFrame();
+		}
+	}
+
+	IEnumerator RemoveFromUsedSources(AudioSource source, System.Action OnDoneEventHandler)
 	{
 		while (source.isPlaying)
 		{
@@ -74,5 +100,8 @@ public class SoundManager : MonoBehaviour
 		source.Stop();
 		usedAudioSources.Remove(source);
 		unusedAudioSources.Add(source);
+
+		if (OnDoneEventHandler != null)
+			OnDoneEventHandler();
 	}
 }
