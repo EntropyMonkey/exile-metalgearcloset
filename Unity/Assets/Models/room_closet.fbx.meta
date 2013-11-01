@@ -9,27 +9,32 @@ ModelImporter:
     100006: room
     100008: //RootNode
     100010: wood_stick
+    100012: rooms
     400000: closet
     400002: doorDrawers
     400004: doorNotDrawers
     400006: room
     400008: //RootNode
     400010: wood_stick
+    400012: rooms
     2300000: closet
     2300002: doorDrawers
     2300004: doorNotDrawers
     2300006: room
     2300008: wood_stick
+    2300010: rooms
     3300000: closet
     3300002: doorDrawers
     3300004: doorNotDrawers
     3300006: room
     3300008: wood_stick
+    3300010: rooms
     4300000: doorNotDrawers
     4300002: doorDrawers
     4300004: wood_stick
     4300006: closet
     4300008: room
+    4300010: rooms
     9500000: //RootNode
   materials:
     importMaterials: 1
