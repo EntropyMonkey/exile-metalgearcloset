@@ -153,6 +153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 877eb7d14592178498c9ad7ee0a1d352, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxImpact: 0
   soundType: 0
   volumeDamper: 0
 --- !u!1 &248118241
@@ -238,6 +239,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cd8c5d7434e95a54db0f4fc65ca1728c, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   m_EditorClassIdentifier: 
 --- !u!59 &248118247
 HingeJoint:
@@ -455,6 +457,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 877eb7d14592178498c9ad7ee0a1d352, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxImpact: 0
   soundType: 0
   volumeDamper: 0
 --- !u!114 &293576159
@@ -468,6 +471,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cd8c5d7434e95a54db0f4fc65ca1728c, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   m_EditorClassIdentifier: 
 --- !u!1 &507267309
 GameObject:
@@ -510,6 +514,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 877eb7d14592178498c9ad7ee0a1d352, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxImpact: 0
   soundType: 0
   volumeDamper: 0
 --- !u!23 &507267312
@@ -895,6 +900,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 877eb7d14592178498c9ad7ee0a1d352, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxImpact: 0
   soundType: 0
   volumeDamper: 0
 --- !u!1 &1539682082
@@ -928,6 +934,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 877eb7d14592178498c9ad7ee0a1d352, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxImpact: 0
   soundType: 0
   volumeDamper: 0
 --- !u!23 &1539682084
