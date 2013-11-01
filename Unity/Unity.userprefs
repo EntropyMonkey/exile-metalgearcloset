@@ -1,6 +1,17 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench />
+<<<<<<< HEAD
+=======
+=======
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Audio\AudioPlayBack.cs">
+    <Files>
+      <File FileName="Assets\Scripts\Audio\AudioPlayBack.cs" Line="31" Column="2" />
+      <File FileName="Assets\Scripts\Audio\AudioVisual.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+>>>>>>> 38b453d568bbaa890dcd69926faebe279cf66b18
+>>>>>>> aa9982f24c0a6a2cbdee7e1283e684433029ee30
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
