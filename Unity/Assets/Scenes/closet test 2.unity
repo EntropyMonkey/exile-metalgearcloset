@@ -2223,7 +2223,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 348642058}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .0715169907, y: 2.58614182, z: 3.23727465}
+  m_LocalPosition: {x: -.0362472534, y: 2.58614182, z: 5.40765333}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2243,7 +2243,7 @@ AudioSource:
   Mute: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
+  MinDistance: 2.69447613
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -3542,8 +3542,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3499173b61c1a27438bc89fdc456abc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  positionYThreshold: 0
-  orientationYThreshold: 0
+  positionYThreshold: 230
+  orientationYThreshold: 240
   hidingSpeed: .00999999978
   initialCoatLeftX: -1.5
   initialCoatRightX: 1.5
@@ -4677,7 +4677,7 @@ Transform:
   m_PrefabInternal: {fileID: 2081086711}
   m_GameObject: {fileID: 927949574}
   m_LocalRotation: {x: 0, y: .707106829, z: 0, w: .707106829}
-  m_LocalPosition: {x: -.510764241, y: 1.80183792, z: -.0399347246}
+  m_LocalPosition: {x: -.709575653, y: 1.80183792, z: -.0399347246}
   m_LocalScale: {x: .046866931, y: .046866931, z: .046866931}
   m_Children:
   - {fileID: 641879570}
@@ -4830,9 +4830,22 @@ Prefab:
       propertyPath: m_HDR
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8100000, guid: 36d48c7381090f646bd5986a43d2df0d, type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8100002, guid: 36d48c7381090f646bd5986a43d2df0d, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 16900000, guid: 36d48c7381090f646bd5986a43d2df0d, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 11400024, guid: 36d48c7381090f646bd5986a43d2df0d, type: 2}
     - {fileID: 2000004, guid: 36d48c7381090f646bd5986a43d2df0d, type: 2}
+    - {fileID: 8100002, guid: 36d48c7381090f646bd5986a43d2df0d, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 36d48c7381090f646bd5986a43d2df0d, type: 2}
   m_RootGameObject: {fileID: 1546067843}
   m_IsPrefabParent: 0
@@ -6173,6 +6186,8 @@ GameObject:
   - 114: {fileID: 1171794257}
   - 114: {fileID: 1171794256}
   - 114: {fileID: 1171794255}
+  - 165: {fileID: 1171794252}
+  - 169: {fileID: 1171794253}
   m_Layer: 8
   m_Name: CameraRight
   m_TagString: MainCamera
@@ -6232,7 +6247,7 @@ AudioListener:
     type: 2}
   m_PrefabInternal: {fileID: 977083196}
   m_GameObject: {fileID: 1171794245}
-  m_Enabled: 0
+  m_Enabled: 1
 --- !u!124 &1171794250
 Behaviour:
   m_ObjectHideFlags: 0
@@ -6270,6 +6285,35 @@ Camera:
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_HDR: 1
+--- !u!165 &1171794252
+AudioHighPassFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1171794245}
+  m_Enabled: 0
+  m_CutoffFrequency: 10
+  m_HighpassResonanceQ: 1
+--- !u!169 &1171794253
+AudioLowPassFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1171794245}
+  m_Enabled: 0
+  serializedVersion: 3
+  m_CutoffFrequency: 349.999664
+  m_LowpassResonanceQ: 1
+  lowpassLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: .984090924
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!114 &1171794255
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7625,6 +7669,14 @@ Prefab:
       propertyPath: m_LocalPosition.x
       value: -1.5
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: d2ffe8ad2bda77d43982f3b7e336e82a, type: 2}
+      propertyPath: positionYThreshold
+      value: 230
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: d2ffe8ad2bda77d43982f3b7e336e82a, type: 2}
+      propertyPath: orientationYThreshold
+      value: 240
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d2ffe8ad2bda77d43982f3b7e336e82a, type: 2}
   m_RootGameObject: {fileID: 602293489}
@@ -8212,7 +8264,6 @@ GameObject:
   - 4: {fileID: 1546067844}
   - 114: {fileID: 1546067846}
   - 114: {fileID: 1546067845}
-  - 81: {fileID: 1546067849}
   - 165: {fileID: 1546067848}
   - 169: {fileID: 1546067847}
   m_Layer: 8
@@ -8311,14 +8362,6 @@ AudioHighPassFilter:
   m_Enabled: 0
   m_CutoffFrequency: 10
   m_HighpassResonanceQ: 1
---- !u!81 &1546067849
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 8100002, guid: 36d48c7381090f646bd5986a43d2df0d,
-    type: 2}
-  m_PrefabInternal: {fileID: 977083196}
-  m_GameObject: {fileID: 1546067843}
-  m_Enabled: 1
 --- !u!1 &1548691409
 GameObject:
   m_ObjectHideFlags: 0
@@ -10543,7 +10586,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: 5b5e617d789fcee42a99387879d261b3, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -.510764241
+      value: -.709575653
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5b5e617d789fcee42a99387879d261b3, type: 2}
       propertyPath: m_LocalPosition.y
