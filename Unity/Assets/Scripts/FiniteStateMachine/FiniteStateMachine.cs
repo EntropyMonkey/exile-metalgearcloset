@@ -7,10 +7,13 @@ public class FiniteStateMachine<T>
 
 	public FSMState<T> CurrentState { get; private set; }
 
+	public FSMState<T> LastState { get; private set; }
+
 	public FiniteStateMachine(T _owner, FSMState<T> firstState = null)
 	{
 		Owner = _owner;
 
+		LastState = null;
 		ChangeState(firstState);
 	}
 
@@ -21,6 +24,8 @@ public class FiniteStateMachine<T>
 
 		if (CurrentState != null)
 			CurrentState.Exit(Owner);
+
+		LastState = CurrentState;
 
 		CurrentState = newState;
 		CurrentState.Enter(Owner);
