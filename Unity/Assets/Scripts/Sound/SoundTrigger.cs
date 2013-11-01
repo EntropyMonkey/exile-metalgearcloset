@@ -7,7 +7,7 @@ public class SoundTrigger : MonoBehaviour {
 		Aslan,
 		Clothing,
 		FallingObject,
-		
+		WoodHit,
 		//...
 	}
 	
@@ -28,6 +28,7 @@ public class SoundTrigger : MonoBehaviour {
 	private void OnCollisionEnter(Collision c)
 	{
 		float impactForce = c.relativeVelocity.magnitude;
+		Closet closet = Closet.GetInstance();
 		if(impactForce >maxImpact){
 			impactForce = maxImpact;	
 		}
@@ -35,12 +36,14 @@ public class SoundTrigger : MonoBehaviour {
 		if(c.collider.tag == "Player")
 		{
 			source.Play();
-			Closet.GetInstance().onClosetSound(soundType, source.volume * volumeDamper);
+			if(closet.onClosetSound != null)
+				closet.onClosetSound(soundType, source.volume * volumeDamper);
 		}
 		else if(!GetComponent<ClothRenderer>() && c.collider.tag == "DynamicObject")
 		{
-			source.Play();
-			Closet.GetInstance().onClosetSound(soundType, source.volume * volumeDamper);
+			source.Play();			
+			if(closet.onClosetSound != null)
+				closet.onClosetSound(soundType, source.volume * volumeDamper);
 		}
 	}
 	

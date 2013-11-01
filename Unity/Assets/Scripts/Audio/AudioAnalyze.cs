@@ -54,7 +54,7 @@ public class AudioAnalyze : MonoBehaviour {
 		return (soundSum/numFrames)*10000000;	
 	}
 	
-	 void SoundAmplitude(){
+	void SoundAmplitude(){
 		float[] specter =  AudioListener.GetSpectrumData(numSamples, 0,FFTWindow.BlackmanHarris);
 		
 		float totalSound = 0;

@@ -22,7 +22,6 @@ public class MoveState : FSMState<MovingVoice>
 	public override void Enter(MovingVoice owner)
 	{
 		base.Enter(owner);
-		Debug.Log("going to kitchen now");
 
 		PlayStepSound(owner);
 
