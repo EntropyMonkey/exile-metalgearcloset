@@ -9,14 +9,19 @@ public class Closet : MonoBehaviour
 	// player hiding in closet through camera movement
 	public System.Action onPlayerHidden;
 	public System.Action onPlayerUnhidden;
-
+	
 	private static Closet instance;
-	public static Closet GetInstance() { return instance; }
+	public static Closet GetInstance() {
+		if(!instance){
+			instance = new GameObject("Closet", typeof(Closet)).GetComponent<Closet>();
+		}
+		return instance; 
+	}
 
 	private void Awake()
 	{
-		if (!instance)
-			instance = this;
+		if (!instance) instance = this;
+		else Destroy(gameObject);
 	}
 
 	// Use this for initialization

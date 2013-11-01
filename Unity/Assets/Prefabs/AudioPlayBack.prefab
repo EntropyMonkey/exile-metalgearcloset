@@ -11,6 +11,7 @@ GameObject:
   - 114: {fileID: 11400000}
   - 82: {fileID: 8200000}
   - 114: {fileID: 11400002}
+  - 114: {fileID: 11400004}
   m_Layer: 0
   m_Name: AudioPlayBack
   m_TagString: Untagged
@@ -109,6 +110,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f90d100721cd2ee44a2118b4a01d9892, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  numFrames: 30
+  minFreq: 0
+  maxFreq: 15
+--- !u!114 &11400004
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2de0c18e84485ed4294f361b5688e104, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  detectionVolume: 100
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

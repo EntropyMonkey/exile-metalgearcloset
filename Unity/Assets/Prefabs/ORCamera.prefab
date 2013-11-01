@@ -185,8 +185,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100010}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.470908701, y: 2.23123717, z: .0489013642}
+  m_LocalRotation: {x: 0, y: -.0149383247, z: 0, w: .99988848}
+  m_LocalPosition: {x: -.329516202, y: 1.00895953, z: -.134928748}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400008}
@@ -974,7 +974,7 @@ AudioHighPassFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100010}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CutoffFrequency: 10
   m_HighpassResonanceQ: 1
 --- !u!169 &16900000
@@ -983,7 +983,7 @@ AudioLowPassFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100010}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_CutoffFrequency: 349.999664
   m_LowpassResonanceQ: 1
