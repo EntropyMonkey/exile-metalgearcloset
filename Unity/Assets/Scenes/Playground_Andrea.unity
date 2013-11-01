@@ -167,4 +167,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   heartBeat1: {fileID: 8300000, guid: 80314bdb7a169b642a3f0f80799578b0, type: 3}
   heartBeat2: {fileID: 8300000, guid: cd77ece99ee4a8f48baa375f35d7f379, type: 3}
-  heartRate: .100000001
+  heartRate: 1
