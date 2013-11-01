@@ -3,7 +3,6 @@ using System.Collections;
 
 public class DebugInput : ClosetInput
 {
-
 	protected override void UpdateHeadMovement()
 	{
 		HeadMovement.x = Input.GetAxis("Horizontal");
