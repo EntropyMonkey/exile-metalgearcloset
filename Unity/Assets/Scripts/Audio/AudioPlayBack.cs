@@ -3,14 +3,7 @@ using System.Collections;
 
 public class AudioPlayBack : MonoBehaviour {
 	
-	private static AudioPlayBack instance;
-	public static AudioPlayBack GetInstance(){ return instance; }
 	
-	private void Awake()
-	{
-		if(!instance)
-			instance = this;
-	}
 	
 	// Use this for initialization
 	void Start () {

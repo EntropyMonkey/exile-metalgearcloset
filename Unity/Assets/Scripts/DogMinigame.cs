@@ -1,19 +1,15 @@
 using UnityEngine;
 using System.Collections;
-using System.Collections.Generic;
 
 public class DogMinigame : MonoBehaviour
 {
-	public List<AudioClip> barkClips;
-	public List<AudioClip> scratchClips;
-	public List<AudioClip> stepClips;
-	
 	public AudioSource barkAudio;
 	public AudioSource scratchAudio;
-	public AudioSource otherAudio;
 	public float noiseThreshold;
 	
 	private bool running = false;
+	
+	public const string BARK = "dog_bark_1";
 
 	void Start ()
 	{
@@ -29,12 +25,10 @@ public class DogMinigame : MonoBehaviour
 	
 	void Update ()
 	{
-		AudioAnalyze breadthAnalyze = AudioPlayBack.GetInstance().GetComponent<AudioAnalyze>();
-		breadthAnalyze.numFrames = Mathf.RoundToInt(5 / Time.deltaTime);
 		while(running)
 		{
-			// player holds breadth for 5 seconds
-			if(AudioPlayBack.GetInstance().GetComponent<AudioAnalyze>().GetAvgSound() < noiseThreshold)
+			// TODO call tronds playerholdsbreadth function with 5sec. parameter
+			// if ...
 			{
 				EndMinigame();
 			}
@@ -44,52 +38,42 @@ public class DogMinigame : MonoBehaviour
 	private void OnClosetSound(SoundTrigger.Type type, float volume)
 	{
 		if(volume > noiseThreshold)
-			 StartCoroutine(GetAngryShort());
+			 GetAngry();
 	}
 	
 	private void OnPlayerHidden()
 	{
-		StartCoroutine(GetAngryShort());
+		GetAngry();
 	}
 	
 	private void OnPlayerUnhidden()
 	{
-		//CalmDown();
+		CalmDown();
 	}
 	
 	private void GetAngry()
 	{
-		Debug.Log("doggy gets really angry");
 		if(!barkAudio.isPlaying)
-		{
-			barkAudio.clip = barkClips[Random.Range(0, barkClips.Count)];
-			barkAudio.loop = true;
 			barkAudio.Play();
-		}
 		if(!scratchAudio.isPlaying)
-		{
-			scratchAudio.clip = scratchClips[Random.Range(0, scratchClips.Count)];
-			scratchAudio.loop = true;
 			scratchAudio.Play();
-		}
 	}
 	
 	private IEnumerator GetAngryShort()
 	{
-		Debug.Log("doggy gets angry once");
 		if(!barkAudio.isPlaying)
 		{
-			barkAudio.clip = barkClips[Random.Range(0, barkClips.Count)];
 			barkAudio.loop = false;
 			barkAudio.Play();
 		}
 		if(!scratchAudio.isPlaying)
 		{
-			scratchAudio.clip = scratchClips[Random.Range(0, scratchClips.Count)];
 			scratchAudio.loop = false;
 			scratchAudio.Play();
 		}
 		yield return new WaitForSeconds(2.0f);
+		barkAudio.loop = true;
+		scratchAudio.loop = true;
 	}
 	
 	private void CalmDown()
@@ -98,14 +82,11 @@ public class DogMinigame : MonoBehaviour
 			barkAudio.Stop();
 		if(scratchAudio.isPlaying)
 			scratchAudio.Stop();
-		Debug.Log ("doggy calms down");
 	}
 	
 	private void EndMinigame()
 	{
 		running = false;
-		Debug.Log("Doggy didn't find you and walks away");
-		
 	}
 }
 
