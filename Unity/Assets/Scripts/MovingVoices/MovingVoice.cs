@@ -25,18 +25,7 @@ public class MovingVoice : MonoBehaviour
 		StateBedroom = GetComponentInChildren(typeof(BedroomState)) as BedroomState;
 		StateCloset = GetComponentInChildren(typeof(ClosetState)) as ClosetState;
 
-		FSM = new FiniteStateMachine<MovingVoice>(this, StateKitchen);
+		FSM = new FiniteStateMachine<MovingVoice>(this, StateBedroom);
 		Debug.Log("start");
-	}
-
-	// Update is called once per frame
-	void Update()
-	{
-		Move();
-	}
-
-	void Move()
-	{
-		transform.position = Vector3.Lerp(transform.position, target, Time.deltaTime * speed);
 	}
 }

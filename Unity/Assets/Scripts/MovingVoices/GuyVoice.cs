@@ -21,6 +21,6 @@ public class GuyVoice : MovingVoice
 	// Update is called once per frame
 	void Update()
 	{
-
+		FSM.Update();
 	}
 }
