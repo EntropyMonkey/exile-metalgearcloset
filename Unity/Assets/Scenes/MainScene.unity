@@ -78,7 +78,7 @@ NavMeshSettings:
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 100000, guid: c56993b9efc7d73468dc2ab03d45a88d, type: 2}
-  m_PrefabInternal: {fileID: 1878283308}
+  m_PrefabInternal: {fileID: 1266222223}
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 647375804}
@@ -87,6 +87,7 @@ GameObject:
   - 23: {fileID: 647375801}
   - 114: {fileID: 647375800}
   - 82: {fileID: 647375805}
+  - 114: {fileID: 647375806}
   m_Layer: 0
   m_Name: Spider
   m_TagString: Untagged
@@ -99,7 +100,7 @@ MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 11400000, guid: c56993b9efc7d73468dc2ab03d45a88d,
     type: 2}
-  m_PrefabInternal: {fileID: 1878283308}
+  m_PrefabInternal: {fileID: 1266222223}
   m_GameObject: {fileID: 647375799}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -107,15 +108,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCamera: {fileID: 1117084845}
-  movementSpeed: .0500000007
-  rotationSpeed: 1
-  shakeTolerance: 0
+  shakeTolerance: 5
+  shakesNeeded: 20
+  spiderPositions: {fileID: 647375806}
+  pathStep: .00200000009
 --- !u!23 &647375801
 Renderer:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 2300000, guid: c56993b9efc7d73468dc2ab03d45a88d,
     type: 2}
-  m_PrefabInternal: {fileID: 1878283308}
+  m_PrefabInternal: {fileID: 1266222223}
   m_GameObject: {fileID: 647375799}
   m_Enabled: 1
   m_CastShadows: 1
@@ -134,7 +136,7 @@ MeshCollider:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6400000, guid: c56993b9efc7d73468dc2ab03d45a88d,
     type: 2}
-  m_PrefabInternal: {fileID: 1878283308}
+  m_PrefabInternal: {fileID: 1266222223}
   m_GameObject: {fileID: 647375799}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -148,25 +150,26 @@ MeshFilter:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 3300000, guid: c56993b9efc7d73468dc2ab03d45a88d,
     type: 2}
-  m_PrefabInternal: {fileID: 1878283308}
+  m_PrefabInternal: {fileID: 1266222223}
   m_GameObject: {fileID: 647375799}
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!4 &647375804
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 400000, guid: c56993b9efc7d73468dc2ab03d45a88d, type: 2}
-  m_PrefabInternal: {fileID: 1878283308}
+  m_PrefabInternal: {fileID: 1266222223}
   m_GameObject: {fileID: 647375799}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4, y: 4, z: 1}
+  m_LocalPosition: {x: -2.84214664, y: 4, z: 10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
 --- !u!82 &647375805
 AudioSource:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabParentObject: {fileID: 8200000, guid: c56993b9efc7d73468dc2ab03d45a88d,
+    type: 2}
+  m_PrefabInternal: {fileID: 1266222223}
   m_GameObject: {fileID: 647375799}
   m_Enabled: 1
   serializedVersion: 3
@@ -220,6 +223,34 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+--- !u!114 &647375806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400002, guid: c56993b9efc7d73468dc2ab03d45a88d,
+    type: 2}
+  m_PrefabInternal: {fileID: 1266222223}
+  m_GameObject: {fileID: 647375799}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2ef3b15c32eb43108261a87963b8937, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pathName: Spider Path
+  pathColor: {r: 0, g: 1, b: 1, a: 1}
+  nodes:
+  - {x: 0, y: 4, z: 10}
+  - {x: -6.23493433, y: 3.20000005, z: 10}
+  - {x: -6.51617479, y: -.385942221, z: 10}
+  - {x: -2.20000005, y: 3.5, z: 10}
+  - {x: -.699999988, y: -.126783371, z: 10}
+  - {x: 1.33521926, y: 3.79999995, z: 10}
+  - {x: -1.10000002, y: 2.4000001, z: 10}
+  - {x: -2, y: 3.0999999, z: 9.47636223}
+  - {x: 0, y: 2.79999995, z: 10}
+  - {x: 0, y: 4, z: 10}
+  nodeCount: 10
+  initialized: 1
+  initialName: New Path 1
 --- !u!1 &1117084844
 GameObject:
   m_ObjectHideFlags: 0
@@ -299,7 +330,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
---- !u!1001 &1878283308
+--- !u!1001 &1266222223
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -308,15 +339,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: c56993b9efc7d73468dc2ab03d45a88d, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -2.84214664
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: c56993b9efc7d73468dc2ab03d45a88d, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: c56993b9efc7d73468dc2ab03d45a88d, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: c56993b9efc7d73468dc2ab03d45a88d, type: 2}
       propertyPath: m_LocalRotation.x
@@ -338,10 +369,6 @@ Prefab:
       propertyPath: mainCamera
       value: 
       objectReference: {fileID: 1117084845}
-    - target: {fileID: 11400000, guid: c56993b9efc7d73468dc2ab03d45a88d, type: 2}
-      propertyPath: rotationSpeed
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c56993b9efc7d73468dc2ab03d45a88d, type: 2}
   m_RootGameObject: {fileID: 647375799}

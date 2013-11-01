@@ -5,11 +5,16 @@ ModelImporter:
   fileIDToRecycleName:
     100000: model_cloth_hanger
     100002: //RootNode
+    100004: meshCollider_cloth_hanger
     400000: model_cloth_hanger
     400002: //RootNode
+    400004: meshCollider_cloth_hanger
     2300000: model_cloth_hanger
+    2300002: meshCollider_cloth_hanger
     3300000: model_cloth_hanger
+    3300002: meshCollider_cloth_hanger
     4300000: model_cloth_hanger
+    4300002: meshCollider_cloth_hanger
     9500000: //RootNode
   materials:
     importMaterials: 1
