@@ -5,6 +5,10 @@ public class Closet : MonoBehaviour
 {
 
 	public System.Action<SoundTrigger.Type, float> onClosetSound; // sound type, sound perceived volume
+	
+	// player hiding in closet through camera movement
+	public System.Action onPlayerHidden;
+	public System.Action onPlayerUnhidden;
 
 	private static Closet instance;
 	public static Closet GetInstance() { return instance; }
