@@ -264,22 +264,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_EditorClassIdentifier: 
   m_EditorClassIdentifier: 
-  m_EditorClassIdentifier: 
-  m_EditorClassIdentifier: 
-  m_EditorClassIdentifier: 
-  m_EditorClassIdentifier: 
-  m_EditorClassIdentifier: 
-  m_EditorClassIdentifier: 
-  m_EditorClassIdentifier: 
-  m_EditorClassIdentifier: 
-  m_EditorClassIdentifier: 
-  m_EditorClassIdentifier: 
-  m_EditorClassIdentifier: 
-  m_EditorClassIdentifier: 
-  m_EditorClassIdentifier: 
-  m_EditorClassIdentifier: 
-  m_EditorClassIdentifier: 
-  m_EditorClassIdentifier: 
 --- !u!4 &29117036
 Transform:
   m_ObjectHideFlags: 0
@@ -7156,8 +7140,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 877eb7d14592178498c9ad7ee0a1d352, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxImpact: 0
-  soundType: 0
+  maxImpact: 10
+  soundType: 1
   volumeDamper: 0
 --- !u!161 &1120037253
 ClothRenderer:
@@ -7470,6 +7454,10 @@ Prefab:
     - target: {fileID: 11400000, guid: 20d78e727211fca45a737c52e124f6e6, type: 2}
       propertyPath: noiseThreshold
       value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 100006, guid: 20d78e727211fca45a737c52e124f6e6, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 20d78e727211fca45a737c52e124f6e6, type: 2}
@@ -8368,10 +8356,10 @@ MonoBehaviour:
   initialCoatRightX: 1.5
   maxCoatLeftX: -.100000001
   maxCoatRightX: .400000006
-  dirHide: {x: .300000012, y: -.899999976, z: .200000003, w: .400000006}
+  dirHide: {x: .100000001, y: -.699999988, z: .200000003, w: .699999988}
   angleDifference: 25
-  hideModifier: .00350000011
-  showDebug: 0
+  hideModifier: .00999999978
+  showDebug: 1
 --- !u!82 &1276355045
 AudioSource:
   m_ObjectHideFlags: 0
@@ -8798,6 +8786,26 @@ Prefab:
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11400024, guid: 36d48c7381090f646bd5986a43d2df0d, type: 2}
+      propertyPath: showDebug
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400024, guid: 36d48c7381090f646bd5986a43d2df0d, type: 2}
+      propertyPath: hideModifier
+      value: .00999999978
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400024, guid: 36d48c7381090f646bd5986a43d2df0d, type: 2}
+      propertyPath: dirHide.x
+      value: .100000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400024, guid: 36d48c7381090f646bd5986a43d2df0d, type: 2}
+      propertyPath: dirHide.y
+      value: -.699999988
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400024, guid: 36d48c7381090f646bd5986a43d2df0d, type: 2}
+      propertyPath: dirHide.w
+      value: .699999988
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 36d48c7381090f646bd5986a43d2df0d, type: 2}
   m_RootGameObject: {fileID: 1546067843}
@@ -9172,7 +9180,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400004, guid: 7322f9b35792e9f478cbfdc19ef1775f, type: 2}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400004, guid: 7322f9b35792e9f478cbfdc19ef1775f, type: 2}
+      propertyPath: detectionVolume
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7322f9b35792e9f478cbfdc19ef1775f, type: 2}
@@ -10082,7 +10094,7 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1389962975}
   m_GameObject: {fileID: 1474791777}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2de0c18e84485ed4294f361b5688e104, type: 3}
   m_Name: 
@@ -10390,6 +10402,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 3809fd2dab507d540b595ec0b1fa1e86, type: 2}
+    - target: {fileID: 11400004, guid: 5b5e617d789fcee42a99387879d261b3, type: 2}
+      propertyPath: soundType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400004, guid: 5b5e617d789fcee42a99387879d261b3, type: 2}
+      propertyPath: maxImpact
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5b5e617d789fcee42a99387879d261b3, type: 2}
   m_RootGameObject: {fileID: 1522420239}
@@ -11330,7 +11350,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1716025005
 Transform:
   m_ObjectHideFlags: 0
@@ -12902,6 +12922,48 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2041245569}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &2046712004
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 2046712006}
+  - 114: {fileID: 2046712005}
+  m_Layer: 0
+  m_Name: MessengerHelper
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2046712005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2046712004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: 
+--- !u!4 &2046712006
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2046712004}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
 --- !u!1 &2075001411
 GameObject:
   m_ObjectHideFlags: 0
