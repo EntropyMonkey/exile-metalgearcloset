@@ -94,12 +94,7 @@ public class DogMinigame : MonoBehaviour
 	
 	IEnumerator StartScratching(){
 		//start scratching
-		if(/*!scratchAudio.isPlaying*/true)
-		{
-			scratchAudio.clip = scratchClips[Random.Range(0, scratchClips.Count)];
-			scratchAudio.loop = true;
-			scratchAudio.Play();
-		}
+		StartCoroutine("ScratchStuff");
 		
 		//bark every 3s
 		while(running){
@@ -113,10 +108,24 @@ public class DogMinigame : MonoBehaviour
 		}
 	}
 	
+	IEnumerator ScratchStuff(){
+		while(running){
+			if(!otherAudio.isPlaying)
+			{
+				scratchAudio.clip = scratchClips[Random.Range(0, scratchClips.Count)];
+				scratchAudio.loop = true;
+				scratchAudio.Play();
+			}
+			yield return new WaitForSeconds(scratchAudio.clip.length + 0.2f);
+		}
+		
+	}
+	
 	IEnumerator StartGrowling(){
 		//stop scratching
 		scratchAudio.Stop();
 		StopCoroutine("StartScratching");
+		StopCoroutine("ScratchStuff");
 		SoundManager.Instance.heartBeat.heartRateQuickener = 5f;
 		//start growling
 		while(running){
@@ -134,6 +143,7 @@ public class DogMinigame : MonoBehaviour
 	void Detected(){
 		StopCoroutine("UpdateAudioCapture");
 		StopCoroutine("StartScratching");
+		StopCoroutine("ScratchStuff");
 		StopCoroutine("StartGrowling");
 		scratchAudio.Stop();
 		otherAudio.Stop();
@@ -227,6 +237,11 @@ public class DogMinigame : MonoBehaviour
 	{
 		running = false;
 		StopCoroutine("UpdateAudioCapture");
+		StopCoroutine("StartScratching");
+		StopCoroutine("ScratchStuff");
+		StopCoroutine("StartGrowling");
+		scratchAudio.Stop();
+		otherAudio.Stop();
 		Debug.Log("Doggy didn't find you and walks away");
 		storyEvent.OnDone(storyEvent);
 		
