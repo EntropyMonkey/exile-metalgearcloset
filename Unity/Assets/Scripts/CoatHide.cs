@@ -7,8 +7,7 @@ public class CoatHide : MonoBehaviour {
 	public float orientationYThreshold;
 	public float hidingSpeed;
 	
-	public AudioClip coat1Clip;
-	public AudioClip coat2Clip;
+	public AudioClip coatClip;
 	
 	private Transform coatLeft;
 	private Transform coatRight;
@@ -72,7 +71,7 @@ public class CoatHide : MonoBehaviour {
 		{
 			if(Closet.GetInstance().onPlayerHidden != null)
 				Closet.GetInstance().onPlayerHidden();
-			audio.clip = coat1Clip;
+			audio.clip = coatClip;
 			audio.loop = false;
 			audio.Play();
 			calledHiding = true;
@@ -81,7 +80,7 @@ public class CoatHide : MonoBehaviour {
 		{
 			if(Closet.GetInstance().onPlayerUnhidden != null)
 				Closet.GetInstance().onPlayerUnhidden();
-			audio.clip = coat2Clip;
+			audio.clip = coatClip;
 			audio.loop = false;
 			audio.Play();
 			calledHiding = false;
