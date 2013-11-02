@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
 guid: 90a01bd395ac902408ecc56dacf0dcc0
-=======
-guid: 97bd5eab741d2a844b05d42ddcbe38d9
->>>>>>> 747919418c01a0c7a2decd156475bd9a6e4a7c68
 ModelImporter:
   serializedVersion: 15
   fileIDToRecycleName:
@@ -271,10 +267,6 @@ ModelImporter:
     4300102: pCylinder3
     7400000: Take 001
     9500000: //RootNode
-<<<<<<< HEAD
-=======
-    11100000: //RootNode
->>>>>>> 747919418c01a0c7a2decd156475bd9a6e4a7c68
   materials:
     importMaterials: 1
     materialName: 0
@@ -325,9 +317,5 @@ ModelImporter:
     rootMotionBoneName: 
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   additionalBone: 1
-<<<<<<< HEAD
   animationType: 2
-=======
-  animationType: 1
->>>>>>> 747919418c01a0c7a2decd156475bd9a6e4a7c68
   userData: 

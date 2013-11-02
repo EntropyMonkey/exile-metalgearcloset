@@ -10,9 +10,7 @@ public class DogMinigame : MonoBehaviour
 	public List<AudioClip> scratchClips;
 	public List<AudioClip> stepClips;
 	public List<AudioClip> growlClips;
-
-	public System.Action GameOver;
-
+	
 	public AudioSource barkAudio;
 	public AudioSource scratchAudio;
 	public AudioSource otherAudio;
@@ -47,8 +45,6 @@ public class DogMinigame : MonoBehaviour
 	private void Destroy()
 	{
 		Closet.GetInstance().onClosetSound -= OnClosetSound;
-
-		GameOver();
 	}
 	
 	IEnumerator UpdateAudioCapture ()
@@ -62,7 +58,6 @@ public class DogMinigame : MonoBehaviour
 		{
 			
 			// player holds breadth for 5 seconds
-			Debug.Log(AudioPlayBack.GetInstance());
 			if(AudioPlayBack.GetInstance().GetComponent<AudioAnalyze>().GetAvgSound() > noiseThreshold || eventOcurred)
 			{
 				eventOcurred = false;
@@ -99,22 +94,13 @@ public class DogMinigame : MonoBehaviour
 	
 	IEnumerator StartScratching(){
 		//start scratching
-		if (/*!scratchAudio.isPlaying*/true)
-		{
-			scratchAudio.clip = scratchClips[Random.Range(0, scratchClips.Count)];
-			scratchAudio.loop = true;
-			scratchAudio.Play();
-		}
+		StartCoroutine("ScratchStuff");
 		
 		//bark every 3s
 		while(running){
 			yield return new WaitForSeconds(3f);
 			if(/*!barkAudio.isPlaying*/true)
 			{
-				scratchAudio.clip = scratchClips[Random.Range(0, scratchClips.Count)];
-				scratchAudio.loop = true;
-				scratchAudio.Play();
-
 				barkAudio.loop = false;
 				barkAudio.clip = barkClips[Random.Range(0, barkClips.Count)];
 				barkAudio.Play();
@@ -122,10 +108,24 @@ public class DogMinigame : MonoBehaviour
 		}
 	}
 	
+	IEnumerator ScratchStuff(){
+		while(running){
+			if(!otherAudio.isPlaying)
+			{
+				scratchAudio.clip = scratchClips[Random.Range(0, scratchClips.Count)];
+				scratchAudio.loop = true;
+				scratchAudio.Play();
+			}
+			yield return new WaitForSeconds(scratchAudio.clip.length + 0.2f);
+		}
+		
+	}
+	
 	IEnumerator StartGrowling(){
 		//stop scratching
 		scratchAudio.Stop();
 		StopCoroutine("StartScratching");
+		StopCoroutine("ScratchStuff");
 		SoundManager.Instance.heartBeat.heartRateQuickener = 5f;
 		//start growling
 		while(running){
@@ -143,6 +143,7 @@ public class DogMinigame : MonoBehaviour
 	void Detected(){
 		StopCoroutine("UpdateAudioCapture");
 		StopCoroutine("StartScratching");
+		StopCoroutine("ScratchStuff");
 		StopCoroutine("StartGrowling");
 		scratchAudio.Stop();
 		otherAudio.Stop();
@@ -237,10 +238,10 @@ public class DogMinigame : MonoBehaviour
 		running = false;
 		StopCoroutine("UpdateAudioCapture");
 		StopCoroutine("StartScratching");
+		StopCoroutine("ScratchStuff");
 		StopCoroutine("StartGrowling");
 		scratchAudio.Stop();
 		otherAudio.Stop();
-
 		Debug.Log("Doggy didn't find you and walks away");
 		storyEvent.OnDone(storyEvent);
 		
