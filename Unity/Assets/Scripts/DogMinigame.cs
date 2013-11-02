@@ -21,7 +21,6 @@ public class DogMinigame : MonoBehaviour
 	{
 		Closet.GetInstance().onClosetSound += OnClosetSound;
 		Closet.GetInstance().onPlayerHidden += OnPlayerHidden;
-		running = true;
 		StartCoroutine("UpdateAudioCapture");
 	}
 	
@@ -33,6 +32,7 @@ public class DogMinigame : MonoBehaviour
 	IEnumerator UpdateAudioCapture ()
 	{
 		yield return new WaitForSeconds(waitUntilStart);
+		running = true;
 		
 		AudioAnalyze breadthAnalyze = AudioPlayBack.GetInstance().GetComponent<AudioAnalyze>();
 		breadthAnalyze.numFrames = Mathf.RoundToInt(5 / Time.deltaTime);
