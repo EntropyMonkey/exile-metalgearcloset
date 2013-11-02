@@ -37,7 +37,7 @@ Material:
       data:
         first:
           name: _Reflection
-        second: .5
+        second: .461538464
       data:
         first:
           name: _Shininess
@@ -49,11 +49,11 @@ Material:
       data:
         first:
           name: _FrezPow
-        second: .25
+        second: .961538434
       data:
         first:
           name: _FrezFalloff
-        second: 4
+        second: 1.11538458
       data:
         first:
           name: _EdgeAlpha

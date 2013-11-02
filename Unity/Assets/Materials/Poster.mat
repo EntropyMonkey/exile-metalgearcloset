@@ -65,7 +65,7 @@ Material:
       data:
         first:
           name: _Shininess
-        second: .186443299
+        second: 10.000001
       data:
         first:
           name: _shine
@@ -73,23 +73,23 @@ Material:
       data:
         first:
           name: _furrines
-        second: 1
+        second: 7.86999989
       data:
         first:
           name: _SpecularMultiply
-        second: .884615362
+        second: .192307696
       data:
         first:
           name: _reflectionMultiply
-        second: 0
+        second: 1
       data:
         first:
           name: _fresnelExponencial
-        second: .5
+        second: 4.6884613
       data:
         first:
           name: _fresnelAdd
-        second: .5
+        second: .903846204
       data:
         first:
           name: _test
