@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: lambert1
+  m_Name: pills_pills_capMat
   m_Shader: {fileID: 4800000, guid: f5843133c006cb840b28379dd9228e05, type: 3}
   m_ShaderKeywords: []
   m_SavedProperties:
@@ -16,14 +16,14 @@ Material:
         first:
           name: _MainTex
         second:
-          m_Texture: {fileID: 2800000, guid: 27de3997a94560a40bec98651bb906ec, type: 3}
+          m_Texture: {fileID: 2800000, guid: d97d5d3e5220881428c6e464f22c730c, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
         first:
           name: _BumpMap
         second:
-          m_Texture: {fileID: 2800000, guid: a1ff1769a14f0c94c9fdfea2fffd38c9, type: 3}
+          m_Texture: {fileID: 2800000, guid: a484c6b1fea6af34e9c547f7bb28ab50, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
@@ -65,7 +65,7 @@ Material:
       data:
         first:
           name: _Shininess
-        second: .078125
+        second: 1.46824777
       data:
         first:
           name: _shine
@@ -77,19 +77,19 @@ Material:
       data:
         first:
           name: _SpecularMultiply
-        second: .5
+        second: 1.73076928
       data:
         first:
           name: _reflectionMultiply
-        second: .730769217
+        second: 0
       data:
         first:
           name: _fresnelExponencial
-        second: 2.9749999
+        second: .5
       data:
         first:
           name: _fresnelAdd
-        second: .230769232
+        second: .5
       data:
         first:
           name: _test
@@ -106,7 +106,7 @@ Material:
       data:
         first:
           name: _Color
-        second: {r: 1, g: 1, b: 1, a: 1}
+        second: {r: .800000012, g: .800000012, b: .800000012, a: 1}
       data:
         first:
           name: _ReflectColor
