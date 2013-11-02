@@ -1,19 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class StoryEvent : MonoBehaviour
+// small-scale story event - play dialog, move somewhere, start minigame
+public abstract class StoryEvent : MonoBehaviour
 {
-	public bool IsDone { get { return true; } }
+	public virtual bool IsDone { get; protected set; }
 
-	// Use this for initialization
-	void Start()
-	{
+	public bool PlayAlone;
 
-	}
-
-	// Update is called once per frame
-	void Update()
-	{
-
-	}
+	public abstract void Trigger();
 }

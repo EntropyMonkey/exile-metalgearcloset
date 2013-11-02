@@ -166,6 +166,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e002865dc20bb74795e91372d81022c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  transitionStepSounds:
+  - {fileID: 8300000, guid: 5a4e369543128fe438563607a449960e, type: 3}
+  - {fileID: 8300000, guid: 52427033f7663dd4aa972debc11a5e9a, type: 3}
+  - {fileID: 8300000, guid: 58681588ce2408a459d0526be680f863, type: 3}
+  - {fileID: 8300000, guid: eebe4c877e3d37d4a98ca0e818d0bd5b, type: 3}
+  transitionSteps: 10
+  walkSpeed: .100000001
 --- !u!114 &11400008
 MonoBehaviour:
   m_ObjectHideFlags: 1
