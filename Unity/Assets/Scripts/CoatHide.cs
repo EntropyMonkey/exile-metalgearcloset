@@ -7,10 +7,14 @@ public class CoatHide : MonoBehaviour {
 	public float orientationYThreshold;
 	public float hidingSpeed;
 	
+	public AudioClip coat1Clip;
+	public AudioClip coat2Clip;
+	
 	private Transform coatLeft;
 	private Transform coatRight;
 	
 	private bool isHiding; // in the process of hiding
+	private bool calledHiding;
 	
 	// oculus data
 	private OVRCameraController ovrController;
@@ -43,6 +47,7 @@ public class CoatHide : MonoBehaviour {
 		
 		ovrController = transform.parent.parent.GetComponent<OVRCameraController>();
 		isHiding = false;
+		calledHiding = false;
 		cRight = new Vector3(maxCoatRightX, 0f, 0f);
 		cLeft = -cRight;
 	}
@@ -63,26 +68,23 @@ public class CoatHide : MonoBehaviour {
 		//isHiding = (Mathf.Abs(orientation.y) >= orientationYThreshold && position.y <= positionYThreshold);	
 		
 		// move coat parts accordingly
-		if(isHiding)
+		if(isHiding && !calledHiding)
 		{
-//			bool leftOpen = coatLeft.localPosition.x <= maxCoatLeftX;
-//			bool rightOpen = coatRight.localPosition.x >= maxCoatRightX;
-//			if(leftOpen)
-//				coatLeft.localPosition += Vector3.right * hidingSpeed;
-//			if(rightOpen)
-//				coatRight.localPosition += Vector3.left * hidingSpeed;
-			if(/*!leftOpen && !rightOpen && */Closet.GetInstance().onPlayerHidden != null)
+			if(Closet.GetInstance().onPlayerHidden != null)
 				Closet.GetInstance().onPlayerHidden();
+			audio.clip = coat1Clip;
+			audio.loop = false;
+			audio.Play();
+			calledHiding = true;
 		}
-		else
+		else if(!isHiding && calledHiding)
 		{
 			if(Closet.GetInstance().onPlayerUnhidden != null)
 				Closet.GetInstance().onPlayerUnhidden();
-			
-//			if(coatLeft.localPosition.x <= initialCoatLeftX)
-//				coatLeft.localPosition += Vector3.left * hidingSpeed;
-//			if(coatRight.localPosition.x >= initialCoatRightX)
-//				coatRight.localPosition += Vector3.right * hidingSpeed;
+			audio.clip = coat2Clip;
+			audio.loop = false;
+			audio.Play();
+			calledHiding = false;
 		}
 	}
 	public bool showDebug = true;
