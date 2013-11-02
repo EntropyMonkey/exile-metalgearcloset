@@ -7,19 +7,34 @@ public class StoryManager : MonoBehaviour
 	[SerializeField]
 	private List<StoryElement> storyElements;
 
+	private int currentElement = 0;
+
 	// Use this for initialization
-	IEnumerator Start()
+	void Start()
 	{
-		for (int i = 0; i < storyElements.Count; i++)
+		currentElement = 0;
+	}
+
+	void OnGUI()
+	{
+		if (GUI.Button(new Rect(0, 100, 50, 20), "Start Story"))
 		{
-			storyElements[i].Play();
-			while (!storyElements[i].IsDone) yield return new WaitForEndOfFrame();
+			PlayNextElement(null);
 		}
 	}
 
-	// Update is called once per frame
-	void Update()
+	void PlayNextElement(StoryElement justFinished)
 	{
+		if (justFinished)
+			justFinished.OnDone -= PlayNextElement;
 
+		storyElements[currentElement].Play();
+
+		currentElement++;
+
+		if (currentElement < storyElements.Count)
+			storyElements[currentElement].OnDone += PlayNextElement;
+		else
+		{ } // story ended!
 	}
 }

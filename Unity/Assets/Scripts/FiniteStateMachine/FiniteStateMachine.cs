@@ -33,6 +33,7 @@ public class FiniteStateMachine<T>
 
 	public void Update()
 	{
-		CurrentState.UpdateState(Owner);
+		if (CurrentState != null)
+			CurrentState.UpdateState(Owner);
 	}
 }

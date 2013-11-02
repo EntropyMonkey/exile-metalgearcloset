@@ -36,13 +36,13 @@ public class SoundTrigger : MonoBehaviour {
 		if(c.collider.tag == "Player")
 		{
 			source.Play();
-			if(closet.onClosetSound != null)
+			if(closet != null && closet.onClosetSound != null)
 				closet.onClosetSound(soundType, source.volume * volumeDamper);
 		}
 		else if(!GetComponent<ClothRenderer>() && c.collider.tag == "DynamicObject")
 		{
 			source.Play();			
-			if(closet.onClosetSound != null)
+			if(closet != null && closet.onClosetSound != null)
 				closet.onClosetSound(soundType, source.volume * volumeDamper);
 		}
 	}

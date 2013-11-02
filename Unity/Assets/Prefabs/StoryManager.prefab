@@ -27,6 +27,7 @@ GameObject:
   - 114: {fileID: 11400006}
   - 114: {fileID: 11400004}
   - 114: {fileID: 11400002}
+  - 114: {fileID: 11400008}
   m_Layer: 0
   m_Name: TestStoryElement
   m_TagString: Untagged
@@ -81,8 +82,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d754de5ece620384bbfc56bfff183546, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayAlone: 0
   dialogueClip: {fileID: 8300000, guid: cd77ece99ee4a8f48baa375f35d7f379, type: 3}
+  whoIsTalking: {fileID: 0}
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -94,8 +95,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7855a3869d5d4d46b3aec7240a7b056, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayAlone: 1
-  waitingTime: 10
+  waitingTime: 0
 --- !u!114 &11400006
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -110,6 +110,21 @@ MonoBehaviour:
   events:
   - {fileID: 11400004}
   - {fileID: 11400002}
+  - {fileID: 11400008}
+  triggerSequentially: 1
+--- !u!114 &11400008
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93eaba496fbb7b9408d196350a832f1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  goal: 0
+  npc: {fileID: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
