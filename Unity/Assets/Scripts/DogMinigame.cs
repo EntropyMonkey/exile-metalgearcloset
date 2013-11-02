@@ -53,6 +53,9 @@ public class DogMinigame : MonoBehaviour
 					angryTime = totalAngryTime;
 					gameTime = totalGameTime;
 				} else {
+					if(!isAngry){
+						OnPlayerHidden();
+					}
 					gameTime = totalGameTime;
 				}
 			}
@@ -69,8 +72,8 @@ public class DogMinigame : MonoBehaviour
 	
 	private void OnClosetSound(SoundTrigger.Type type, float volume)
 	{
+		print ("I AM TOO LOAUD! "+volume);
 		if(volume < noiseThreshold) return;
-		
 		if(timesAngry==0){
 			StartCoroutine(GetAngryShort());
 			timesAngry++;

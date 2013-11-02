@@ -948,7 +948,7 @@ MonoBehaviour:
     m_Curve: []
     m_PreInfinity: 2
     m_PostInfinity: 2
-  exposureAdjustment: 5
+  exposureAdjustment: 3
   middleGrey: .400000006
   white: 2
   adaptionSpeed: 1.5
@@ -972,7 +972,7 @@ MonoBehaviour:
     m_Curve: []
     m_PreInfinity: 2
     m_PostInfinity: 2
-  exposureAdjustment: 5
+  exposureAdjustment: 3
   middleGrey: .400000006
   white: 2
   adaptionSpeed: 1.5
@@ -1068,10 +1068,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   positionYThreshold: 2.20000005
-  orientationYThreshold: .5
+  orientationYThreshold: .200000003
   hidingSpeed: .00499999989
-  coat1Clip: {fileID: 8300000, guid: aa0b44f8af9e94148970540d9e8df2f6, type: 3}
-  coat2Clip: {fileID: 8300000, guid: 3dae9af7c8b651847bea8dd79b6549e8, type: 3}
+  coatClip: {fileID: 0}
   initialCoatLeftX: -1.5
   initialCoatRightX: 1.5
   maxCoatLeftX: -.100000001
@@ -1079,7 +1078,7 @@ MonoBehaviour:
   dirHide: {x: .300000012, y: -.899999976, z: .200000003, w: .400000006}
   angleDifference: 25
   hideModifier: .00350000011
-  showDebug: 1
+  showDebug: 0
 --- !u!124 &12400000
 Behaviour:
   m_ObjectHideFlags: 1
