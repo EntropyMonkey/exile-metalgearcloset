@@ -7,37 +7,53 @@ public class StoryElement : MonoBehaviour
 {
 	public List<StoryEvent> events;
 
-	public bool IsDone { get; private set; }
+	public System.Action<StoryElement> OnDone;
 
-	private int eventsDone;
+	[SerializeField]
+	private bool triggerSequentially = true;
+
+	private int currentEvent = 0;
 
 	// trigger the events
 	public void Play()
 	{
-		Debug.Log("start playing events");
-		eventsDone = 0;
+		Debug.Log(gameObject.name + ": start playing events");
 
-		for (int i = 0; i < events.Count; i++)
+		currentEvent = 0;
+
+		if (triggerSequentially)
 		{
-			StartCoroutine(PlayEvent(i));
+			TriggerEventSequentially(currentEvent);
 		}
-
-		IsDone = true;
+		else
+		{
+			for (int i =0; i<events.Count;i++)
+			{
+				events[i].Trigger();
+				events[i].OnDone += (e) => { currentEvent++; };
+			}
+		}
 	}
 
-	IEnumerator PlayEvent(int i)
+	void Update()
 	{
-		// wait until all events up to this one have been finished
-		while (events[i].PlayAlone && eventsDone <= i) yield return new WaitForEndOfFrame();
+		if (!triggerSequentially && currentEvent >= events.Count)
+			OnDone(this);
+	}
 
-		Debug.Log("trigger " + i);
+	void TriggerEventSequentially(int i)
+	{
+		if (i < events.Count)
+		{
+			events[i].Trigger();
+			events[i].OnDone += SeqEventDoneHandler;
+		}
+		else if (OnDone != null)
+			OnDone(this);
+	}
 
-		// trigger event
-		events[i].Trigger();
-
-		// wait until it's done
-		while (!events[i].IsDone) yield return new WaitForEndOfFrame();
-
-		eventsDone++;
+	void SeqEventDoneHandler(StoryEvent e)
+	{
+		TriggerEventSequentially(++currentEvent);
 	}
 }

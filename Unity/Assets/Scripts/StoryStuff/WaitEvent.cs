@@ -8,12 +8,14 @@ public class WaitEvent : StoryEvent
 
 	public override void Trigger()
 	{
+		Debug.Log("wait.");
 		StartCoroutine(Wait(waitingTime));
 	}
 
 	IEnumerator Wait(float t)
 	{
 		yield return new WaitForSeconds(t);
-		IsDone = true;
+		Debug.Log("done waiting");
+		OnDone(this);
 	}
 }

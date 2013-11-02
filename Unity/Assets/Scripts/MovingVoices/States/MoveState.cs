@@ -4,6 +4,8 @@ using System.Collections.Generic;
 
 public class MoveState : FSMState<MovingVoice>
 {
+	public System.Action<MoveState> OnReachedDestination;
+
 	protected Transform currentGoal;
 
 	[SerializeField]
@@ -14,6 +16,9 @@ public class MoveState : FSMState<MovingVoice>
 
 	[SerializeField]
 	protected float walkSpeed = 0.1f;
+
+	[SerializeField]
+	protected float totalMoveTime = 4;
 
 	private int currentStepAmount = 0;
 
@@ -35,7 +40,6 @@ public class MoveState : FSMState<MovingVoice>
 		SoundManager.Instance.PlaySound(transitionStepSounds[Random.Range(0, transitionStepSounds.Count)], owner.transform, true, OnDoneWithStepSound);
 	}
 
-
 	void OnDoneWithStepSound()
 	{
 		if (currentStepAmount < transitionSteps)
@@ -49,7 +53,13 @@ public class MoveState : FSMState<MovingVoice>
 	{
 		base.UpdateState(owner);
 
-		owner.transform.position = Vector3.Lerp(owner.transform.position, currentGoal.transform.position, Time.deltaTime * walkSpeed);
+		owner.transform.position += (currentGoal.transform.position - owner.transform.position).normalized * Time.deltaTime * (walkSpeed / totalMoveTime);
+
+		if (OnReachedDestination != null &&
+			Vector3.Distance(owner.transform.position, currentGoal.transform.position) < 1f)
+		{
+			OnReachedDestination(this);
+		}
 	}
 
 

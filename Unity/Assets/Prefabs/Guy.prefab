@@ -115,7 +115,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 58681588ce2408a459d0526be680f863, type: 3}
   - {fileID: 8300000, guid: eebe4c877e3d37d4a98ca0e818d0bd5b, type: 3}
   transitionSteps: 10
-  walkSpeed: .100000001
+  walkSpeed: 3
+  totalMoveTime: 4
   kitchen: {fileID: 0}
 --- !u!114 &11400002
 MonoBehaviour:
@@ -134,7 +135,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 58681588ce2408a459d0526be680f863, type: 3}
   - {fileID: 8300000, guid: eebe4c877e3d37d4a98ca0e818d0bd5b, type: 3}
   transitionSteps: 10
-  walkSpeed: .100000001
+  walkSpeed: 3
+  totalMoveTime: 4
   bedroom: {fileID: 0}
 --- !u!114 &11400004
 MonoBehaviour:
@@ -153,7 +155,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 58681588ce2408a459d0526be680f863, type: 3}
   - {fileID: 8300000, guid: eebe4c877e3d37d4a98ca0e818d0bd5b, type: 3}
   transitionSteps: 10
-  walkSpeed: .100000001
+  walkSpeed: 3
+  totalMoveTime: 4
   bathroom: {fileID: 0}
 --- !u!114 &11400006
 MonoBehaviour:
@@ -172,7 +175,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 58681588ce2408a459d0526be680f863, type: 3}
   - {fileID: 8300000, guid: eebe4c877e3d37d4a98ca0e818d0bd5b, type: 3}
   transitionSteps: 10
-  walkSpeed: .100000001
+  walkSpeed: 3
+  totalMoveTime: 4
 --- !u!114 &11400008
 MonoBehaviour:
   m_ObjectHideFlags: 1

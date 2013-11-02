@@ -6,20 +6,18 @@ public class PlayDialogueEvent : StoryEvent
 	[SerializeField]
 	private AudioClip dialogueClip;
 
+	[SerializeField]
+	private MovingVoice whoIsTalking;
+
 	public override void Trigger()
 	{
-		SoundManager.Instance.PlaySound(dialogueClip);
+		Debug.Log("talk.");
+		SoundManager.Instance.PlaySound(dialogueClip, whoIsTalking.transform, true, HandleSoundFinished);
 	}
 
-	// Use this for initialization
-	void Start()
+	void HandleSoundFinished()
 	{
-
-	}
-
-	// Update is called once per frame
-	void Update()
-	{
-
+		Debug.Log("done talking.");
+		OnDone(this);
 	}
 }
