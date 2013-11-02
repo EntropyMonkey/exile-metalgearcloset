@@ -2,11 +2,7 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\DogMinigame.cs">
     <Files>
-      <File FileName="Assets\Scripts\DogMinigame.cs" Line="73" Column="35" />
-      <File FileName="Assets\Scripts\Audio\AudioPlayBack.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\CoatHide.cs" Line="58" Column="3" />
-      <File FileName="Assets\Scripts\Audio\AudioAnalyze.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\TestScripts\KeepQuiet.cs" Line="19" Column="68" />
+      <File FileName="Assets\Scripts\DogMinigame.cs" Line="77" Column="39" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
