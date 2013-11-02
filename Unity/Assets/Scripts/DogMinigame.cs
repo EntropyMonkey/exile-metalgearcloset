@@ -14,8 +14,16 @@ public class DogMinigame : MonoBehaviour
 	public float noiseThreshold;
 	
 	private bool running = false;
+	private bool isAngry = false;
 	
-	public float waitUntilStart = 5f;
+	public float waitUntilStart = 2f;
+	
+	private float gameTime = 5f;
+	private float angryTime = 0f;
+	public float totalGameTime = 5f;
+	public float totalAngryTime = 3f;
+	
+	private int timesAngry = 0;
 
 	void Start ()
 	{
@@ -34,23 +42,41 @@ public class DogMinigame : MonoBehaviour
 		yield return new WaitForSeconds(waitUntilStart);
 		running = true;
 		
-		AudioAnalyze breadthAnalyze = AudioPlayBack.GetInstance().GetComponent<AudioAnalyze>();
-		breadthAnalyze.numFrames = Mathf.RoundToInt(5 / Time.deltaTime);
-		while(running)
+		while(gameTime > 0)
 		{
+			
 			// player holds breadth for 5 seconds
-			if(AudioPlayBack.GetInstance().GetComponent<AudioAnalyze>().GetAvgSound() < noiseThreshold)
+			if(AudioPlayBack.GetInstance().GetComponent<AudioAnalyze>().GetAvgSound() > noiseThreshold)
 			{
-				EndMinigame();
+				if(angryTime>0f){
+					angryTime = totalAngryTime;
+					gameTime = totalGameTime;
+				} else {
+					gameTime = totalGameTime;
+				}
 			}
+			if(angryTime>0f){
+				angryTime -= Time.deltaTime;
+			} else if(isAngry) {
+				CalmDown();
+			}
+			gameTime -= Time.deltaTime;
 			yield return null;
 		}
+		EndMinigame();
 	}
 	
 	private void OnClosetSound(SoundTrigger.Type type, float volume)
 	{
-		if(volume > noiseThreshold)
-			 StartCoroutine(GetAngryShort());
+		if(volume < noiseThreshold) return;
+		
+		if(timesAngry==0){
+			StartCoroutine(GetAngryShort());
+			timesAngry++;
+			return;
+		}
+		
+		GetAngry();
 	}
 	
 	private void OnPlayerHidden()
@@ -63,9 +89,12 @@ public class DogMinigame : MonoBehaviour
 		//CalmDown();
 	}
 	
+	[ContextMenu("Test Angry")]
 	private void GetAngry()
 	{
 		Debug.Log("doggy gets really angry");
+		isAngry = true;
+		angryTime = totalAngryTime;
 		if(!barkAudio.isPlaying)
 		{
 			barkAudio.clip = barkClips[Random.Range(0, barkClips.Count)];
@@ -80,6 +109,7 @@ public class DogMinigame : MonoBehaviour
 		}
 	}
 	
+	[ContextMenu("Test Angry Short")]
 	private IEnumerator GetAngryShort()
 	{
 		Debug.Log("doggy gets angry once");
@@ -104,14 +134,24 @@ public class DogMinigame : MonoBehaviour
 			barkAudio.Stop();
 		if(scratchAudio.isPlaying)
 			scratchAudio.Stop();
+		isAngry = false;
+		angryTime = 0f;
 		Debug.Log ("doggy calms down");
 	}
 	
 	private void EndMinigame()
 	{
 		running = false;
+		StopCoroutine("UpdateAudioCapture");
 		Debug.Log("Doggy didn't find you and walks away");
 		
+	}
+	
+	public bool showDebug = true;
+	void OnGUI(){
+		if(!showDebug)return;
+		GUILayout.Box("Time left: " + gameTime);
+		GUILayout.Box("Anger left: " + angryTime);
 	}
 }
 
