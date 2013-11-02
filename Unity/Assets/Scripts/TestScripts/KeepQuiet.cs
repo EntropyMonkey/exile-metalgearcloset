@@ -16,7 +16,7 @@ public class KeepQuiet : MonoBehaviour {
 	void Update () {
 		if(GetComponent<AudioAnalyze>().GetAvgSound() > detectionVolume){
 			detectedNum++;
-			print("DETECTED!!! "+detectedNum);
+			//print("DETECTED!!! "+GetComponent<AudioAnalyze>().GetAvgSound());
 			
 			
 		}
