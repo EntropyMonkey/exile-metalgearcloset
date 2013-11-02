@@ -25,6 +25,6 @@ public class MovingVoice : MonoBehaviour
 		StateBedroom = GetComponentInChildren(typeof(BedroomState)) as BedroomState;
 		StateCloset = GetComponentInChildren(typeof(ClosetState)) as ClosetState;
 
-		FSM = new FiniteStateMachine<MovingVoice>(this, StateBedroom);
+		FSM = new FiniteStateMachine<MovingVoice>(this);
 	}
 }
