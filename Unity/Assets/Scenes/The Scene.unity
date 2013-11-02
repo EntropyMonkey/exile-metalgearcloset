@@ -262,6 +262,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_EditorClassIdentifier: 
   m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: 
 --- !u!4 &29117036
 Transform:
   m_ObjectHideFlags: 0
@@ -7308,6 +7318,14 @@ Prefab:
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 20d78e727211fca45a737c52e124f6e6, type: 2}
+      propertyPath: totalGameTime
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 20d78e727211fca45a737c52e124f6e6, type: 2}
+      propertyPath: noiseThreshold
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 20d78e727211fca45a737c52e124f6e6, type: 2}
   m_RootGameObject: {fileID: 1716025004}
@@ -11091,7 +11109,7 @@ MonoBehaviour:
   otherAudio: {fileID: 399326848}
   noiseThreshold: 100
   waitUntilStart: 2
-  totalGameTime: 5
+  totalGameTime: 10
   totalAngryTime: 3
   showDebug: 1
 --- !u!1 &1720752175

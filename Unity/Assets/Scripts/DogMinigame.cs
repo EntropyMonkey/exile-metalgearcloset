@@ -30,6 +30,7 @@ public class DogMinigame : MonoBehaviour
 		Closet.GetInstance().onClosetSound += OnClosetSound;
 		Closet.GetInstance().onPlayerHidden += OnPlayerHidden;
 		StartCoroutine("UpdateAudioCapture");
+		gameTime = totalGameTime;
 	}
 	
 	private void Destroy()
@@ -81,12 +82,24 @@ public class DogMinigame : MonoBehaviour
 	
 	private void OnPlayerHidden()
 	{
-		StartCoroutine(GetAngryShort());
+		if(timesAngry==0){
+			StartCoroutine(GetAngryShort());
+			timesAngry++;
+			return;
+		}
+		
+		GetAngry();
 	}
 	
 	private void OnPlayerUnhidden()
 	{
-		//CalmDown();
+		if(timesAngry==0){
+			StartCoroutine(GetAngryShort());
+			timesAngry++;
+			return;
+		}
+		
+		GetAngry();
 	}
 	
 	[ContextMenu("Test Angry")]
@@ -95,13 +108,13 @@ public class DogMinigame : MonoBehaviour
 		Debug.Log("doggy gets really angry");
 		isAngry = true;
 		angryTime = totalAngryTime;
-		if(!barkAudio.isPlaying)
+		if(/*!barkAudio.isPlaying*/true)
 		{
 			barkAudio.clip = barkClips[Random.Range(0, barkClips.Count)];
 			barkAudio.loop = true;
 			barkAudio.Play();
 		}
-		if(!scratchAudio.isPlaying)
+		if(/*!scratchAudio.isPlaying*/true)
 		{
 			scratchAudio.clip = scratchClips[Random.Range(0, scratchClips.Count)];
 			scratchAudio.loop = true;
@@ -112,20 +125,23 @@ public class DogMinigame : MonoBehaviour
 	[ContextMenu("Test Angry Short")]
 	private IEnumerator GetAngryShort()
 	{
-		Debug.Log("doggy gets angry once");
-		if(!barkAudio.isPlaying)
-		{
-			barkAudio.clip = barkClips[Random.Range(0, barkClips.Count)];
-			barkAudio.loop = false;
-			barkAudio.Play();
+		if(!isAngry){
+			Debug.Log("doggy gets angry once");
+			if(!barkAudio.isPlaying)
+			{
+				barkAudio.clip = barkClips[Random.Range(0, barkClips.Count)];
+				barkAudio.loop = false;
+				barkAudio.Play();
+			}
+			if(!scratchAudio.isPlaying)
+			{
+				scratchAudio.clip = scratchClips[Random.Range(0, scratchClips.Count)];
+				scratchAudio.loop = false;
+				scratchAudio.Play();
+			}
+			timesAngry++;
+			yield return new WaitForSeconds(2.0f);
 		}
-		if(!scratchAudio.isPlaying)
-		{
-			scratchAudio.clip = scratchClips[Random.Range(0, scratchClips.Count)];
-			scratchAudio.loop = false;
-			scratchAudio.Play();
-		}
-		yield return new WaitForSeconds(2.0f);
 	}
 	
 	private void CalmDown()
