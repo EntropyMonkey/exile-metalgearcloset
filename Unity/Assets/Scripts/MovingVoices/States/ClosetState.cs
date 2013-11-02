@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ClosetState : FSMState<MovingVoice>
+public class ClosetState : MoveState
 {
 	public override void Enter(MovingVoice owner)
 	{

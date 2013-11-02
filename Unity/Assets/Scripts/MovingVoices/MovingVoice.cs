@@ -26,6 +26,5 @@ public class MovingVoice : MonoBehaviour
 		StateCloset = GetComponentInChildren(typeof(ClosetState)) as ClosetState;
 
 		FSM = new FiniteStateMachine<MovingVoice>(this, StateBedroom);
-		Debug.Log("start");
 	}
 }
