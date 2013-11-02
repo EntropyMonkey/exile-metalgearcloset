@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Unity/Assets/Sounds/spider.meta
+guid: b5e456d0beeaed44d9247b2b2f871f84
+=======
 guid: bc29c91d99c290046b84d9e1e2876e6d
+>>>>>>> 00dcec983ba6750ab1af7e6d8c0995e4caea5301:Unity/Assets/Scenes/closet test.meta
 folderAsset: yes
 DefaultImporter:
   userData: 
