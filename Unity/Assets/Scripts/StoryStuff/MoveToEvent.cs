@@ -26,6 +26,15 @@ public class MoveToEvent : StoryEvent
 
 		npc.FSM.ChangeState(s);
 
-		IsDone = true;
+		Debug.Log("move to "+ goal + ".");
+
+		s.OnReachedDestination += HandleReachedDestination;
+	}
+
+	void HandleReachedDestination(MoveState s)
+	{
+		Debug.Log("done moving.");
+		OnDone(this);
+		s.OnReachedDestination -= HandleReachedDestination;
 	}
 }

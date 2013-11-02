@@ -12,6 +12,9 @@ public class SoundManager : MonoBehaviour
 	[SerializeField]
 	private float heartRate = 1.0f;
 
+	[SerializeField]
+	private bool playHeartBeats = true;
+
 	private List<AudioSource> usedAudioSources;
 	private List<AudioSource> unusedAudioSources;
 
@@ -37,14 +40,18 @@ public class SoundManager : MonoBehaviour
 		usedAudioSources = new List<AudioSource>();
 		unusedAudioSources = new List<AudioSource>();
 
-		heartBeat = new HeartBeat(this, heartBeat1, heartBeat2);
+		heartBeat = gameObject.AddComponent<HeartBeat>();
+		heartBeat.Initialize(this, heartBeat1, heartBeat2);
 	}
 
 	// Update is called once per frame
 	void Update()
 	{
-		heartBeat.Update();
-		heartBeat.heartRateQuickener = heartRate;
+		if (playHeartBeats)
+		{
+			heartBeat.Update();
+			heartBeat.heartRateQuickener = heartRate;
+		}
 	}
 
 	// play sound immediately, using cached audio sources
@@ -53,7 +60,7 @@ public class SoundManager : MonoBehaviour
 		AudioSource source = GetFreeAudioSource();
 
 		if (followTransform && t != null)
-			StartCoroutine(MoveWithGO(source.gameObject, t.gameObject));
+			StartCoroutine(MoveWithGO(source.gameObject, t.gameObject, clip.length));
 
 		source.clip = clip;
 		source.Play();
@@ -79,9 +86,9 @@ public class SoundManager : MonoBehaviour
 		return source;
 	}
 
-	IEnumerator MoveWithGO(GameObject follower, GameObject lead)
+	IEnumerator MoveWithGO(GameObject follower, GameObject lead, float clipLength)
 	{
-		float currentTime = follower.audio.clip.length;
+		float currentTime = clipLength;
 		while (currentTime > 0)
 		{
 			currentTime -= Time.deltaTime;

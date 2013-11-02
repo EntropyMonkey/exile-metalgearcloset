@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class HeartBeat
+public class HeartBeat : MonoBehaviour
 {
 	// usual heartbeat is 75bpm - 1.25 bps
 	private const float currentHeartRate = 1.25f;
@@ -21,7 +21,7 @@ public class HeartBeat
 	private AudioClip beat2;
 	private SoundManager manager;
 
-	public HeartBeat(SoundManager _manager, AudioClip _beat1, AudioClip _beat2)
+	public void Initialize(SoundManager _manager, AudioClip _beat1, AudioClip _beat2)
 	{
 		beat1 = _beat1;
 		beat2 = _beat2;
