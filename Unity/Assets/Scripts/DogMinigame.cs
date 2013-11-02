@@ -14,12 +14,15 @@ public class DogMinigame : MonoBehaviour
 	public float noiseThreshold;
 	
 	private bool running = false;
+	
+	public float waitUntilStart = 5f;
 
 	void Start ()
 	{
 		Closet.GetInstance().onClosetSound += OnClosetSound;
 		Closet.GetInstance().onPlayerHidden += OnPlayerHidden;
 		running = true;
+		StartCoroutine("UpdateAudioCapture");
 	}
 	
 	private void Destroy()
@@ -27,8 +30,10 @@ public class DogMinigame : MonoBehaviour
 		Closet.GetInstance().onClosetSound -= OnClosetSound;
 	}
 	
-	void Update ()
+	IEnumerator UpdateAudioCapture ()
 	{
+		yield return new WaitForSeconds(waitUntilStart);
+		
 		AudioAnalyze breadthAnalyze = AudioPlayBack.GetInstance().GetComponent<AudioAnalyze>();
 		breadthAnalyze.numFrames = Mathf.RoundToInt(5 / Time.deltaTime);
 		while(running)
@@ -38,6 +43,7 @@ public class DogMinigame : MonoBehaviour
 			{
 				EndMinigame();
 			}
+			yield return null;
 		}
 	}
 	
