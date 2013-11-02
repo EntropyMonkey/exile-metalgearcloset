@@ -4,69 +4,102 @@ using System.Collections;
 public class Spider : MonoBehaviour {
 
     public float movementSpeed;
-    public float rotationSpeed;
+	public float rotationSpeed;
     public float shakeTolerance;
+	
+	public Transform[] path;
+	private int pathCounter;
     
     private bool move;
-    private bool rotate;
+	private float time;
     private bool alive;
     
-    private Vector3 lastCameraPosition;
     private int shakeCounter;
-    
-    private void Start () {
-        //transform.localPosition = Vector3.up * 0.5f + Vector3.forward * 0.35f + Vector3.left * Random.Range(0f, 0.35f);
-        move = true;
-        rotate = false;
+	
+	private Vector3 lastPosition;
+	
+	private OVRCameraController ovrController;
+	
+	private Quaternion lastOrientation;
+	
+	private void Start () {
+		move = true;
         alive = true;
         shakeCounter = 0;
-        
+		pathCounter = 0;
+        transform.position = path[pathCounter].position;
+		lastPosition = transform.position;
+		
+		ovrController = transform.parent.parent.GetComponent<OVRCameraController>();
+		
         StartCoroutine(PerformRun());
     }
     
-    void Update () {
+    private void Update () {
         if(!alive)
         {
-                transform.Translate(Vector3.back * movementSpeed * 10.0f);
-                StartCoroutine(WaitDestroy());
+            transform.Translate(Vector3.up * movementSpeed * 10.0f);
+            StartCoroutine(WaitDestroy());
         }
-        else if(move)
-                transform.Translate(Vector3.back * movementSpeed);
-        else if(rotate)
-                transform.RotateAround(Vector3.right, 0.01f);
+		if(move)
+		{
+			float step = movementSpeed * Time.deltaTime;
+			transform.position = Vector3.MoveTowards(transform.position, path[pathCounter].position, step);
+			
+			transform.LookAt(transform.position - lastPosition);
+			transform.right = -(transform.position - lastPosition);
+		}
     }
+	
+	private void LateUpdate()
+	{
+		lastPosition = transform.position;
+	}
+	
+	private IEnumerator MoveToNextNode(float time)
+	{
+		this.time = time;
+		move = true;
+		if(animation && animation.IsPlaying("Take 001")==false)
+				animation.Play("Take 001", PlayMode.StopAll);
+		
+		pathCounter++;
+		if(pathCounter >= path.Length)
+			pathCounter = 0;
+		
+		yield return new WaitForSeconds(time);
+		
+		if(animation && animation.IsPlaying("Take 001"))
+				animation.Stop();
+		move = false;
+	}
     
     private IEnumerator PerformRun()
     {
+		float moveTime = 0.0f;
         while(alive)
         {
-            rotate = false;
-            move = true;
-            yield return new WaitForSeconds(Random.Range(0.5f, 1f));
-            move = false;
+			// move
+            moveTime = Random.Range(0.5f, 1.5f) * movementSpeed;
+			yield return StartCoroutine(MoveToNextNode(moveTime));
+			// wait
             yield return new WaitForSeconds(Random.Range(0.3f, 2f));
-            rotate = true;
-            yield return new WaitForSeconds(Random.Range(0.5f, 1f));
-            rotate = false;
-            yield return new WaitForSeconds(Random.Range(0.5f, 3.5f));
-            move = true;
-            yield return new WaitForSeconds(Random.Range(1.5f, 1.5f));
-            move = false;
-            yield return new WaitForSeconds(Random.Range(1.5f, 2.5f));
-            rotate = true;
-            yield return new WaitForSeconds(Random.Range(1f, 2f));
-        }
-            
+        }            
     }
     
     private void FixedUpdate()
     {
-        float diff = Mathf.Abs(transform.parent.position.x - lastCameraPosition.x);
+		// perform shake check
+		Quaternion curOrientation = new Quaternion();
+		ovrController.GetCameraOrientation(ref curOrientation);
+        float diff = Mathf.Abs(curOrientation.eulerAngles.x - lastOrientation.eulerAngles.x);
         
         if(shakeCounter >= 5)
                 alive = false;
         else if(diff > shakeTolerance)
                 shakeCounter++;
+		
+		lastOrientation = curOrientation;
     }
     
     private IEnumerator WaitDestroy()
