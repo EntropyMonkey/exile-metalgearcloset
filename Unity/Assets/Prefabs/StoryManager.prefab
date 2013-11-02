@@ -26,12 +26,85 @@ GameObject:
   - 4: {fileID: 400002}
   - 114: {fileID: 11400004}
   - 114: {fileID: 11400006}
-  - 114: {fileID: 11400002}
   - 114: {fileID: 11400008}
-  - 114: {fileID: 11400010}
-  - 114: {fileID: 11400012}
+  m_Layer: 0
+  m_Name: StoryElement GuyComesIn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &100004
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 400004}
+  - 114: {fileID: 11400014}
+  - 114: {fileID: 11400022}
+  - 114: {fileID: 11400020}
+  - 114: {fileID: 11400018}
+  - 114: {fileID: 11400016}
+  - 114: {fileID: 11400024}
+  - 114: {fileID: 11400038}
+  - 114: {fileID: 11400036}
+  - 114: {fileID: 11400002}
   m_Layer: 0
   m_Name: StoryElement GuyGetsHome
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &100006
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 400006}
+  - 114: {fileID: 11400012}
+  - 114: {fileID: 11400010}
+  - 114: {fileID: 11400028}
+  - 114: {fileID: 11400026}
+  m_Layer: 0
+  m_Name: StoryElement Dog
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &100008
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 400008}
+  - 114: {fileID: 11400032}
+  - 114: {fileID: 11400030}
+  - 114: {fileID: 11400034}
+  m_Layer: 0
+  m_Name: StoryElement DogReaction
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &100010
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 400010}
+  m_Layer: 0
+  m_Name: StoryElement ComeUpAfterDog
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -47,7 +120,11 @@ Transform:
   m_LocalPosition: {x: 2.65558672, y: -1.46695518, z: 6.5581007}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 400010}
+  - {fileID: 400008}
+  - {fileID: 400004}
   - {fileID: 400002}
+  - {fileID: 400006}
   m_Father: {fileID: 0}
 --- !u!4 &400002
 Transform:
@@ -56,7 +133,51 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100002}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.26265717, y: -3.50108671, z: .0850300789}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 400000}
+--- !u!4 &400004
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100004}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.26265764, y: -3.50108719, z: .0850305557}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 400000}
+--- !u!4 &400006
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100006}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -.138848066, y: .71842289, z: -6.25659132}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 400000}
+--- !u!4 &400008
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100008}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -.138848066, y: .71842289, z: -6.25659132}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 400000}
+--- !u!4 &400010
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100010}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.26265717, y: -3.50108671, z: .0850300789}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 400000}
@@ -72,19 +193,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   storyElements:
-  - {fileID: 11400004}
+  - {fileID: 11400012}
+  - {fileID: 11400032}
+  - {fileID: 11400012}
+  - {fileID: 11400032}
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100002}
+  m_GameObject: {fileID: 100004}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d754de5ece620384bbfc56bfff183546, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueClip: {fileID: 8300000, guid: be24ced41e96a874fb048dbcd8968e40, type: 3}
+  dialogueClip: {fileID: 8300000, guid: a9dedfb937fe4d34b97fe5b364ee13af, type: 3}
   whoIsTalking: {fileID: 0}
 --- !u!114 &11400004
 MonoBehaviour:
@@ -99,10 +223,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   events:
   - {fileID: 11400006}
-  - {fileID: 11400002}
   - {fileID: 11400008}
-  - {fileID: 11400010}
-  triggerSequentially: 1
+  triggerSequentially: 0
 --- !u!114 &11400006
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -114,7 +236,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d754de5ece620384bbfc56bfff183546, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueClip: {fileID: 8300000, guid: 7ec5d0f1d00c6014998a97fa89778473, type: 3}
+  dialogueClip: {fileID: 8300000, guid: 6b43a0b877df6204c9c43db31c271ebc, type: 3}
   whoIsTalking: {fileID: 0}
 --- !u!114 &11400008
 MonoBehaviour:
@@ -127,32 +249,213 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d754de5ece620384bbfc56bfff183546, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueClip: {fileID: 8300000, guid: 5f3348af05200df418687637b5e22644, type: 3}
+  dialogueClip: {fileID: 8300000, guid: f7441b9e606ce4641a8fe6b52fdad10f, type: 3}
   whoIsTalking: {fileID: 0}
 --- !u!114 &11400010
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100002}
+  m_GameObject: {fileID: 100006}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d754de5ece620384bbfc56bfff183546, type: 3}
+  m_Script: {fileID: 11500000, guid: 68d21c190680f14479ae4b35e3ab4459, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueClip: {fileID: 8300000, guid: 52dd4d7a1179b4249b80d391300fd462, type: 3}
-  whoIsTalking: {fileID: 0}
+  dogGame: {fileID: 100006, guid: 20d78e727211fca45a737c52e124f6e6, type: 2}
 --- !u!114 &11400012
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100002}
+  m_GameObject: {fileID: 100006}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b96af15bff1c75c4eb6138b855f9ee11, type: 3}
+  m_Script: {fileID: 11500000, guid: 46d318525fcc1984b86c17307c8e0cfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  events:
+  - {fileID: 11400010}
+  - {fileID: 11400028}
+  - {fileID: 11400026}
+  triggerSequentially: 1
+--- !u!114 &11400014
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46d318525fcc1984b86c17307c8e0cfd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  events:
+  - {fileID: 11400022}
+  - {fileID: 11400020}
+  - {fileID: 11400018}
+  - {fileID: 11400016}
+  - {fileID: 11400024}
+  - {fileID: 11400038}
+  - {fileID: 11400002}
+  - {fileID: 11400036}
+  triggerSequentially: 1
+--- !u!114 &11400016
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d754de5ece620384bbfc56bfff183546, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueClip: {fileID: 8300000, guid: a038df11bf1254446ab1f43dd7fe0d96, type: 3}
+  whoIsTalking: {fileID: 0}
+--- !u!114 &11400018
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d754de5ece620384bbfc56bfff183546, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueClip: {fileID: 8300000, guid: fda5d609796631a4696eed082c890aa7, type: 3}
+  whoIsTalking: {fileID: 0}
+--- !u!114 &11400020
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d754de5ece620384bbfc56bfff183546, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueClip: {fileID: 8300000, guid: fd2bb4a6377a7db428a8de71f0d8bfa0, type: 3}
+  whoIsTalking: {fileID: 0}
+--- !u!114 &11400022
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d754de5ece620384bbfc56bfff183546, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueClip: {fileID: 8300000, guid: be24ced41e96a874fb048dbcd8968e40, type: 3}
+  whoIsTalking: {fileID: 0}
+--- !u!114 &11400024
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7855a3869d5d4d46b3aec7240a7b056, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waitingTime: 3
+--- !u!114 &11400026
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d754de5ece620384bbfc56bfff183546, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueClip: {fileID: 8300000, guid: 25d54efc575703d4f928edf7b3fc3261, type: 3}
+  whoIsTalking: {fileID: 0}
+--- !u!114 &11400028
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7855a3869d5d4d46b3aec7240a7b056, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waitingTime: .5
+--- !u!114 &11400030
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d754de5ece620384bbfc56bfff183546, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueClip: {fileID: 8300000, guid: fa912159c3056a64f9197038115adc65, type: 3}
+  whoIsTalking: {fileID: 0}
+--- !u!114 &11400032
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46d318525fcc1984b86c17307c8e0cfd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  events:
+  - {fileID: 11400030}
+  - {fileID: 11400034}
+  triggerSequentially: 0
+--- !u!114 &11400034
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d754de5ece620384bbfc56bfff183546, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueClip: {fileID: 8300000, guid: 9b0d3dd41bc137f46a3925c558e88536, type: 3}
+  whoIsTalking: {fileID: 0}
+--- !u!114 &11400036
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93eaba496fbb7b9408d196350a832f1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  goal: 2
+  npc: {fileID: 0}
+--- !u!114 &11400038
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d754de5ece620384bbfc56bfff183546, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueClip: {fileID: 8300000, guid: 217e5fead81fca0479c3f2d254af2162, type: 3}
+  whoIsTalking: {fileID: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

@@ -30,11 +30,13 @@ public class StoryManager : MonoBehaviour
 
 		storyElements[currentElement].Play();
 
-		currentElement++;
-
 		if (currentElement < storyElements.Count)
 			storyElements[currentElement].OnDone += PlayNextElement;
 		else
 		{ } // story ended!
+
+		Debug.Log("playing " + storyElements[currentElement]);
+
+		currentElement++;
 	}
 }

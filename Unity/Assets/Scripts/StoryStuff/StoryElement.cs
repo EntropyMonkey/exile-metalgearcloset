@@ -43,7 +43,7 @@ public class StoryElement : MonoBehaviour
 
 	void Update()
 	{
-		if (!triggerSequentially && currentEvent >= events.Count)
+		if (!triggerSequentially && currentEvent >= events.Count && OnDone != null)
 			OnDone(this);
 	}
 
@@ -54,8 +54,11 @@ public class StoryElement : MonoBehaviour
 			events[i].Trigger();
 			events[i].OnDone += SeqEventDoneHandler;
 		}
-		else if (OnDone != null)
+		else// if (OnDone != null)
+		{
 			OnDone(this);
+			Debug.Log("doneeee");
+		}
 	}
 
 	void SeqEventDoneHandler(StoryEvent e)

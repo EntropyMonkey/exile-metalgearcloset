@@ -296,6 +296,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6db5f766329f56b4d9a5446bdf65e8a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  storyEvent: {fileID: 0}
   barkClips:
   - {fileID: 8300000, guid: c215d40007c5bb14d9004a85357f848f, type: 3}
   - {fileID: 8300000, guid: c61664823d8abb5489eabd7d6f3e7816, type: 3}
@@ -317,10 +318,19 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 82cdf51f19cca6047a8f651b41e080ca, type: 3}
   - {fileID: 8300000, guid: e681ac1c029de4148ac3eb2605e07a5d, type: 3}
   - {fileID: 8300000, guid: e7d3572054ca6b94395b5a73f0e3760c, type: 3}
+  growlClips:
+  - {fileID: 8300000, guid: 7e5d41a1e1c5de046b782137bc8db1c8, type: 3}
+  - {fileID: 8300000, guid: 5b9018928bbbc8644945d9a553cc19b0, type: 3}
+  - {fileID: 8300000, guid: 1ffb0806daafd2b4990eb902100cdf53, type: 3}
+  - {fileID: 8300000, guid: df40855d63918514c983a4ae97eeaacd, type: 3}
   barkAudio: {fileID: 8200004}
   scratchAudio: {fileID: 8200002}
   otherAudio: {fileID: 8200000}
-  noiseThreshold: 100
+  noiseThreshold: 1000
+  waitUntilStart: 2
+  totalGameTime: 5
+  totalAngryTime: 3
+  showDebug: 1
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
