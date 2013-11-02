@@ -3,6 +3,12 @@
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\CoatHide.cs">
     <Files>
 <<<<<<< HEAD
+      <File FileName="Assets\Scripts\DogMinigame.cs" Line="120" Column="57" />
+      <File FileName="Assets\Scripts\DogGameStoryEvent.cs" Line="16" Column="1" />
+      <File FileName="Assets\Scripts\Sound\HeartBeat.cs" Line="17" Column="33" />
+      <File FileName="Assets\Scripts\Sound\SoundManager.cs" Line="21" Column="26" />
+=======
+<<<<<<< HEAD
       <File FileName="Assets\Scripts\DogMinigame.cs" Line="73" Column="35" />
       <File FileName="Assets\Scripts\Audio\AudioPlayBack.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\CoatHide.cs" Line="65" Column="132" />
@@ -11,6 +17,7 @@
 =======
       <File FileName="Assets\Scripts\DogMinigame.cs" Line="77" Column="39" />
 >>>>>>> 5a3eca87b8d214197459ef0dac6a9336f41ca64b
+>>>>>>> ce65458a81436491f4027c7f087140b843ce746d
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

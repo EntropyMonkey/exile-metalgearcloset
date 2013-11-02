@@ -4,6 +4,8 @@ using System.Collections.Generic;
 
 public class DogMinigame : MonoBehaviour
 {
+	public DogGameStoryEvent storyEvent;
+	
 	public List<AudioClip> barkClips;
 	public List<AudioClip> scratchClips;
 	public List<AudioClip> stepClips;
@@ -50,6 +52,7 @@ public class DogMinigame : MonoBehaviour
 		yield return new WaitForSeconds(waitUntilStart);
 		running = true;
 		StartCoroutine("StartScratching");
+		SoundManager.Instance.heartBeat.heartRateQuickener = 3f;
 		
 		while(running)
 		{
@@ -64,26 +67,23 @@ public class DogMinigame : MonoBehaviour
 				if(timeThatThePlayerIsBeingNoisy >= 3f){
 					if(!isGrowling)StartCoroutine("StartGrowling");
 					dogIsNowGrowling += Time.deltaTime;
-					if(dogIsNowGrowling > 5f) Detected();
+					//if(dogIsNowGrowling > 5f) Detected();
 				}
 				
 				if(angryTime>0f){
 					angryTime = totalAngryTime;
-<<<<<<< HEAD
-=======
 					gameTime = totalGameTime;
 				} else {
 					if(!isAngry){
 						OnPlayerHidden();
 					}
 					gameTime = totalGameTime;
->>>>>>> 18a82cf18ccbfac22bb1c929989ebf5b5c9524b3
 				}
 			} else{
 				keepQuietTime += Time.deltaTime;
 				if(isGrowling){
 					dogIsNowGrowling += Time.deltaTime;
-					if(dogIsNowGrowling > 5f) Detected();
+					//if(dogIsNowGrowling > 5f) Detected();
 				}
 				timeThatThePlayerIsBeingNoisy = 0f;
 				if(keepQuietTime > 4f) EndMinigame();
@@ -117,6 +117,7 @@ public class DogMinigame : MonoBehaviour
 		//stop scratching
 		scratchAudio.Stop();
 		StopCoroutine("StartScratching");
+		SoundManager.Instance.heartBeat.heartRateQuickener = 5f;
 		//start growling
 		while(running){
 			if(!otherAudio.isPlaying)
@@ -145,11 +146,9 @@ public class DogMinigame : MonoBehaviour
 	{
 		print ("I AM TOO LOAUD! "+volume);
 		if(volume < noiseThreshold) return;
-<<<<<<< HEAD
 		
 		//do something
 		eventOcurred = true;
-=======
 		if(timesAngry==0){
 			StartCoroutine(GetAngryShort());
 			timesAngry++;
@@ -157,7 +156,6 @@ public class DogMinigame : MonoBehaviour
 		}
 		
 		GetAngry();
->>>>>>> 18a82cf18ccbfac22bb1c929989ebf5b5c9524b3
 	}
 	
 	private void OnPlayerHidden()
@@ -230,6 +228,7 @@ public class DogMinigame : MonoBehaviour
 		running = false;
 		StopCoroutine("UpdateAudioCapture");
 		Debug.Log("Doggy didn't find you and walks away");
+		storyEvent.OnDone(storyEvent);
 		
 	}
 	

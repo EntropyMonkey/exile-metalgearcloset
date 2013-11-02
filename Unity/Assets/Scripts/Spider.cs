@@ -60,6 +60,8 @@ public class Spider : MonoBehaviour {
 	{
 		this.time = time;
 		move = true;
+		if(animation && animation.IsPlaying("Take 001")==false)
+				animation.Play("Take 001", PlayMode.StopAll);
 		
 		pathCounter++;
 		if(pathCounter >= path.Length)
@@ -67,6 +69,8 @@ public class Spider : MonoBehaviour {
 		
 		yield return new WaitForSeconds(time);
 		
+		if(animation && animation.IsPlaying("Take 001"))
+				animation.Stop();
 		move = false;
 	}
     

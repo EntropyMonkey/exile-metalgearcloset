@@ -18,7 +18,7 @@ public class SoundManager : MonoBehaviour
 	private List<AudioSource> usedAudioSources;
 	private List<AudioSource> unusedAudioSources;
 
-	private HeartBeat heartBeat;
+	public HeartBeat heartBeat;
 
 	// Singleton
 	public static SoundManager Instance
