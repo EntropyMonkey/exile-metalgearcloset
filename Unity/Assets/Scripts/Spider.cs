@@ -30,7 +30,7 @@ public class Spider : MonoBehaviour {
         transform.position = path[pathCounter].position;
 		lastPosition = transform.position;
 		
-		ovrController = transform.parent.parent.GetComponent<OVRCameraController>();
+		ovrController = transform.parent.parent.parent.GetComponent<OVRCameraController>();
 		
         StartCoroutine(PerformRun());
     }
@@ -92,8 +92,8 @@ public class Spider : MonoBehaviour {
 		// perform shake check
 		Quaternion curOrientation = new Quaternion();
 		ovrController.GetCameraOrientation(ref curOrientation);
-        float diff = Mathf.Abs(curOrientation.eulerAngles.x - lastOrientation.eulerAngles.x);
-        
+        float diff = Vector3.Angle(curOrientation.eulerAngles, lastOrientation.eulerAngles);
+        Debug.Log(diff.ToString());
         if(shakeCounter >= 5)
                 alive = false;
         else if(diff > shakeTolerance)
