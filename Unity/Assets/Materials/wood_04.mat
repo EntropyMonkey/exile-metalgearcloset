@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: metal
+  m_Name: wood_04
   m_Shader: {fileID: 4800000, guid: f5843133c006cb840b28379dd9228e05, type: 3}
   m_ShaderKeywords: []
   m_SavedProperties:
@@ -16,21 +16,21 @@ Material:
         first:
           name: _MainTex
         second:
-          m_Texture: {fileID: 2800000, guid: 033d82c8aec5b4c4f8627121df3bb1f7, type: 3}
+          m_Texture: {fileID: 2800000, guid: e3f3bdf67b0c2bc4d814e992a203b384, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
         first:
           name: _BumpMap
         second:
-          m_Texture: {fileID: 2800000, guid: ea5ded42fdc231e4084fd5bf27156ff4, type: 3}
+          m_Texture: {fileID: 2800000, guid: 31d26f541e06a834196d485b561cd9d6, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
         first:
           name: _SpecularMap
         second:
-          m_Texture: {fileID: 2800000, guid: f912fe4044ecfe249a79f1ca3baf903c, type: 3}
+          m_Texture: {fileID: 2800000, guid: eb615c819638f3843b74557e4406d71c, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
@@ -65,7 +65,7 @@ Material:
       data:
         first:
           name: _Shininess
-        second: 10.000001
+        second: 1.18307781
       data:
         first:
           name: _shine
@@ -73,23 +73,23 @@ Material:
       data:
         first:
           name: _furrines
-        second: 6.36000013
+        second: 1
       data:
         first:
           name: _SpecularMultiply
-        second: 1.34615386
+        second: .5
       data:
         first:
           name: _reflectionMultiply
-        second: 0
+        second: 1
       data:
         first:
           name: _fresnelExponencial
-        second: 10
+        second: 2.2134614
       data:
         first:
           name: _fresnelAdd
-        second: .865384579
+        second: .615384638
       data:
         first:
           name: _test
@@ -106,7 +106,7 @@ Material:
       data:
         first:
           name: _Color
-        second: {r: .161764681, g: .161764681, b: .161764681, a: 1}
+        second: {r: .110294104, g: .110294104, b: .110294104, a: 1}
       data:
         first:
           name: _ReflectColor
