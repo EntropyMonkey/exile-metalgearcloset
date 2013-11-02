@@ -37,7 +37,8 @@ public class CoatHide : MonoBehaviour {
 		// update hiding status
 		ovrController.GetCameraOrientation(ref orientation);
 		ovrController.GetCameraPosition(ref position);
-		isHiding = (orientation.y <= orientationYThreshold && position.y <= positionYThreshold);	
+		Debug.Log("Orientation: " + orientation.ToString() + "\nPosition: " + position.ToString());
+		isHiding = (Mathf.Abs(orientation.y) >= orientationYThreshold && position.y <= positionYThreshold);	
 		
 		// move coat parts accordingly
 		if(isHiding)
