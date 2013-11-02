@@ -10,8 +10,8 @@ public class SpiderGameStoryEvent : StoryEvent {
 	{
 		print ("trigged");
 		
-		Spider spider = (Instantiate(spiderPrefab) as GameObject).GetComponent<Spider>();
+		GameObject spider = (Instantiate(spiderPrefab) as GameObject);
 		spider.transform.parent = camController.transform;
-		spider.storyEvent = this;
+		spider.GetComponentInChildren<Spider>().storyEvent = this;
 	}
 }
