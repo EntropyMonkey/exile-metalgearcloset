@@ -55,6 +55,7 @@ public class CoatHide : MonoBehaviour {
 		// update hiding status
 		ovrController.GetCameraOrientation(ref orientation);
 		ovrController.GetCameraPosition(ref position);
+		print(orientation +"     "+position);
 		
 		//isHiding = Quaternion.LookRotation(orientation) + Quaternion.LookRotation(dirHide.normalized);
 		//isHiding = ((orientation + dirHide.normalized)/2).;
