@@ -63,7 +63,7 @@ public class CoatHide : MonoBehaviour {
 		if(isHiding && !hasHiddenBefore) hasHiddenBefore = true;
 		
 		coatRight.localPosition = 
-			(isHiding)?Vector3.MoveTowards(coatRight.localPosition, Vector3.Lerp(Vector3.zero, cRight, angleDifferencePercentage), mySpeed)
+			(isHiding)?Vector3.MoveTowards(coatRight.localPosition, Vector3.Lerp(Vector3.zero, cRight, angleDifferencePercentage), hideSpeed)
 				:cRight;
 		coatLeft.localPosition = -coatRight.localPosition;
 		
