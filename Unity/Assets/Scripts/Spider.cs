@@ -32,7 +32,7 @@ public class Spider : MonoBehaviour {
         transform.position = path[pathCounter].position;
 		lastPosition = transform.position;
 		
-		ovrController = transform.parent.parent.parent.GetComponent<OVRCameraController>();
+		ovrController = transform.root.GetComponent<OVRCameraController>();
 		
         StartCoroutine(PerformRun());
     }
@@ -62,8 +62,8 @@ public class Spider : MonoBehaviour {
 	{
 		this.time = time;
 		move = true;
-		if(animation && animation.IsPlaying("Take 001")==false)
-				animation.Play("Take 001", PlayMode.StopAll);
+		//if(animation && animation.IsPlaying("Take 001")==false)
+		//		animation.Play("Take 001", PlayMode.StopAll);
 		
 		pathCounter++;
 		if(pathCounter >= path.Length)
@@ -71,8 +71,8 @@ public class Spider : MonoBehaviour {
 		
 		yield return new WaitForSeconds(time);
 		
-		if(animation && animation.IsPlaying("Take 001"))
-				animation.Stop();
+		//if(animation && animation.IsPlaying("Take 001"))
+		//		animation.Stop();
 		move = false;
 	}
     
@@ -95,7 +95,7 @@ public class Spider : MonoBehaviour {
 		Quaternion curOrientation = new Quaternion();
 		ovrController.GetCameraOrientation(ref curOrientation);
         float diff = Vector3.Angle(curOrientation.eulerAngles, lastOrientation.eulerAngles);
-        Debug.Log(diff.ToString());
+
         if(shakeCounter >= 5)
                 alive = false;
         else if(diff > shakeTolerance)
@@ -108,6 +108,6 @@ public class Spider : MonoBehaviour {
     {
         yield return new WaitForSeconds(2);
 		storyEvent.OnDone(storyEvent);
-        Destroy(this.gameObject);
+		Destroy(this.gameObject);
     }
 }

@@ -13,7 +13,7 @@ public class SoundManager : MonoBehaviour
 	private float heartRate = 1.0f;
 
 	[SerializeField]
-	private bool playHeartBeats = true;
+	public bool playHeartBeats = true;
 
 	private List<AudioSource> usedAudioSources;
 	private List<AudioSource> unusedAudioSources;

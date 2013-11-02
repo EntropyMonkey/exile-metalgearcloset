@@ -34,6 +34,8 @@ public class DogMinigame : MonoBehaviour
 	
 	private int timesAngry = 0;
 
+	public System.Action GameOver;
+
 	void Start ()
 	{
 		Closet.GetInstance().onClosetSound += OnClosetSound;
@@ -45,6 +47,7 @@ public class DogMinigame : MonoBehaviour
 	private void Destroy()
 	{
 		Closet.GetInstance().onClosetSound -= OnClosetSound;
+		GameOver();
 	}
 	
 	IEnumerator UpdateAudioCapture ()
