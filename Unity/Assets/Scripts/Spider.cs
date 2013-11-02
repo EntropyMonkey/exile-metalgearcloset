@@ -2,6 +2,8 @@
 using System.Collections;
 
 public class Spider : MonoBehaviour {
+	
+	public SpiderGameStoryEvent storyEvent;
 
     public float movementSpeed;
 	public float rotationSpeed;
@@ -105,6 +107,7 @@ public class Spider : MonoBehaviour {
     private IEnumerator WaitDestroy()
     {
         yield return new WaitForSeconds(2);
+		storyEvent.OnDone(storyEvent);
         Destroy(this.gameObject);
     }
 }
