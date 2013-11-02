@@ -5,7 +5,8 @@ using System.Collections.Generic;
 [System.Serializable]
 public class StoryElement : MonoBehaviour
 {
-	public List<StoryEvent> events;
+	[SerializeField]
+	private List<StoryEvent> events;
 
 	public System.Action<StoryElement> OnDone;
 
@@ -13,6 +14,11 @@ public class StoryElement : MonoBehaviour
 	private bool triggerSequentially = true;
 
 	private int currentEvent = 0;
+
+	void Start()
+	{
+		//events = new List<StoryEvent>(GetComponents(typeof(StoryEvent)) as StoryEvent[]);
+	}
 
 	// trigger the events
 	public void Play()
