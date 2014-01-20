@@ -1,0 +1,163 @@
+fileFormatVersion: 2
+guid: 28ba69843a5914743b5c4e989b304317
+ModelImporter:
+  serializedVersion: 15
+  fileIDToRecycleName:
+    100000: bed
+    100002: bedroom
+    100004: //RootNode
+    100006: bedside_table_01
+    100008: bedside_table_02
+    100010: beed_foot
+    100012: ceiling
+    100014: door_bathroom
+    100016: door_bathroom 1
+    100018: door_stairs
+    100020: door_stairs 1
+    100022: floor
+    100024: jamb_bathroom_01
+    100026: jamb_bathroom_02
+    100028: jamb_bathroom_03
+    100030: jamb_stairs_01
+    100032: jamb_stairs_02
+    100034: jamb_stairs_03
+    100036: lamp_01
+    100038: lamp_02
+    100040: pillows
+    100042: sheets
+    100044: walls
+    100046: window
+    400000: bed
+    400002: bedroom
+    400004: //RootNode
+    400006: bedside_table_01
+    400008: bedside_table_02
+    400010: beed_foot
+    400012: ceiling
+    400014: door_bathroom
+    400016: door_bathroom 1
+    400018: door_stairs
+    400020: door_stairs 1
+    400022: floor
+    400024: jamb_bathroom_01
+    400026: jamb_bathroom_02
+    400028: jamb_bathroom_03
+    400030: jamb_stairs_01
+    400032: jamb_stairs_02
+    400034: jamb_stairs_03
+    400036: lamp_01
+    400038: lamp_02
+    400040: pillows
+    400042: sheets
+    400044: walls
+    400046: window
+    2300000: bedside_table_01
+    2300002: bedside_table_02
+    2300004: beed_foot
+    2300006: ceiling
+    2300008: door_bathroom 1
+    2300010: door_stairs 1
+    2300012: floor
+    2300014: jamb_bathroom_01
+    2300016: jamb_bathroom_02
+    2300018: jamb_bathroom_03
+    2300020: jamb_stairs_01
+    2300022: jamb_stairs_02
+    2300024: jamb_stairs_03
+    2300026: lamp_01
+    2300028: lamp_02
+    2300030: pillows
+    2300032: sheets
+    2300034: walls
+    2300036: window
+    3300000: bedside_table_01
+    3300002: bedside_table_02
+    3300004: beed_foot
+    3300006: ceiling
+    3300008: door_bathroom 1
+    3300010: door_stairs 1
+    3300012: floor
+    3300014: jamb_bathroom_01
+    3300016: jamb_bathroom_02
+    3300018: jamb_bathroom_03
+    3300020: jamb_stairs_01
+    3300022: jamb_stairs_02
+    3300024: jamb_stairs_03
+    3300026: lamp_01
+    3300028: lamp_02
+    3300030: pillows
+    3300032: sheets
+    3300034: walls
+    3300036: window
+    4300000: lamp_01
+    4300002: lamp_02
+    4300004: bedside_table_01
+    4300006: bedside_table_02
+    4300008: pillows
+    4300010: beed_foot
+    4300012: sheets
+    4300014: window
+    4300016: walls
+    4300018: ceiling
+    4300020: floor
+    4300022: jamb_stairs_01
+    4300024: jamb_stairs_02
+    4300026: jamb_stairs_03
+    4300028: door_stairs
+    4300030: jamb_bathroom_03
+    4300032: jamb_bathroom_02
+    4300034: jamb_bathroom_01
+    4300036: door_bathroom
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  userData: 
