@@ -47,6 +47,7 @@ public class CameraFade : MonoBehaviour
 	{		
 		instance.m_FadeTexture = new Texture2D(1, 1);        
         instance.m_BackgroundStyle.normal.background = instance.m_FadeTexture;
+		//DontDestroyOnLoad(gameObject);
 	}
  
 	// Draw the texture and perform the fade:
@@ -92,7 +93,7 @@ public class CameraFade : MonoBehaviour
 	/// <param name='newScreenOverlayColor'>
 	/// New screen overlay color.
 	/// </param>
-	private static void SetScreenOverlayColor(Color newScreenOverlayColor)
+	public static void SetScreenOverlayColor(Color newScreenOverlayColor)
 	{
 		instance.m_CurrentScreenOverlayColor = newScreenOverlayColor;
 		instance.m_FadeTexture.SetPixel(0, 0, instance.m_CurrentScreenOverlayColor);
