@@ -24,6 +24,7 @@ public class Closet : MonoBehaviour
 
 	private void Start()
 	{
+		CameraFade.StartAlphaFade(Color.black, true, 2f);
 		ovrController = GameObject.Find("ORCamera").GetComponent<OVRCameraController>();
 	}
 }
