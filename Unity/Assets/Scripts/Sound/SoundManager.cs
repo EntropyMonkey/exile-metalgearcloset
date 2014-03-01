@@ -32,8 +32,7 @@ public class SoundManager : MonoBehaviour
 	}
 	private static SoundManager instance;
 
-	// Use this for initialization
-	void Awake()
+	private void Awake()
 	{
 		instance = this;
 
@@ -44,8 +43,7 @@ public class SoundManager : MonoBehaviour
 		heartBeat.Initialize(this, heartBeat1, heartBeat2);
 	}
 
-	// Update is called once per frame
-	void Update()
+	private void Update()
 	{
 		if (playHeartBeats)
 		{
@@ -68,7 +66,7 @@ public class SoundManager : MonoBehaviour
 		StartCoroutine(RemoveFromUsedSources(source, OnDoneEventHandler));
 	}
 
-	AudioSource GetFreeAudioSource()
+	private AudioSource GetFreeAudioSource()
 	{
 		AudioSource source;
 		// get source from pool
@@ -86,7 +84,7 @@ public class SoundManager : MonoBehaviour
 		return source;
 	}
 
-	IEnumerator MoveWithGO(GameObject follower, GameObject lead, float clipLength)
+	private IEnumerator MoveWithGO(GameObject follower, GameObject lead, float clipLength)
 	{
 		float currentTime = clipLength;
 		while (currentTime > 0)
@@ -97,7 +95,7 @@ public class SoundManager : MonoBehaviour
 		}
 	}
 
-	IEnumerator RemoveFromUsedSources(AudioSource source, System.Action OnDoneEventHandler)
+	private IEnumerator RemoveFromUsedSources(AudioSource source, System.Action OnDoneEventHandler)
 	{
 		while (source.isPlaying)
 		{

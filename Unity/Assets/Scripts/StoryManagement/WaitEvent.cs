@@ -12,7 +12,7 @@ public class WaitEvent : StoryEvent
 		StartCoroutine(Wait(waitingTime));
 	}
 
-	IEnumerator Wait(float t)
+	private IEnumerator Wait(float t)
 	{
 		yield return new WaitForSeconds(t);
 		Debug.Log("done waiting");

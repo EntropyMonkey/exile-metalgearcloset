@@ -31,7 +31,7 @@ public class MoveToEvent : StoryEvent
 		s.OnReachedDestination += HandleReachedDestination;
 	}
 
-	void HandleReachedDestination(MoveState s)
+	private void HandleReachedDestination(MoveState s)
 	{
 		Debug.Log("done moving.");
 		OnDone(this);

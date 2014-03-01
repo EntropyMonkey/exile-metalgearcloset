@@ -4,7 +4,7 @@ using System.Collections;
 public class PlayerKeepStillEvent : StoryEvent
 {
 	[SerializeField]
-	private float keepStillTime = 5;
+	public float keepStillTime = 8;
 
 	float currentTime;
 

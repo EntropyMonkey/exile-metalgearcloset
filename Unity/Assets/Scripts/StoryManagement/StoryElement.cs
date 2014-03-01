@@ -15,7 +15,7 @@ public class StoryElement : MonoBehaviour
 
 	private int currentEvent = 0;
 
-	void Start()
+	private void Start()
 	{
 		//events = new List<StoryEvent>(GetComponents(typeof(StoryEvent)) as StoryEvent[]);
 	}
@@ -41,13 +41,13 @@ public class StoryElement : MonoBehaviour
 		}
 	}
 
-	void Update()
+	private void Update()
 	{
 		if (!triggerSequentially && currentEvent >= events.Count && OnDone != null)
 			OnDone(this);
 	}
 
-	void TriggerEventSequentially(int i)
+	private void TriggerEventSequentially(int i)
 	{
 		if (i < events.Count)
 		{
@@ -61,7 +61,7 @@ public class StoryElement : MonoBehaviour
 		}
 	}
 
-	void SeqEventDoneHandler(StoryEvent e)
+	private void SeqEventDoneHandler(StoryEvent e)
 	{
 		TriggerEventSequentially(++currentEvent);
 	}
