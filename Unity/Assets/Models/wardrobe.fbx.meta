@@ -1,0 +1,286 @@
+fileFormatVersion: 2
+guid: dae94839e672f844693e1a39879d50af
+ModelImporter:
+  serializedVersion: 15
+  fileIDToRecycleName:
+    100000: closet_door
+    100002: closet_door 1
+    100004: closet_door 2
+    100006: coatHangerBar
+    100008: door_01
+    100010: door_01_hinge_01
+    100012: door_01_hinge_01 1
+    100014: door_01_hinge_02
+    100016: door_01_hinge_02 1
+    100018: door_01_hinge_03
+    100020: door_01_hinge_03 1
+    100022: door_01_hinge_closet_01
+    100024: door_01_hinge_closet_02
+    100026: door_01_hinge_closet_03
+    100028: door_01_knob
+    100030: door_01_rotation
+    100032: door_02
+    100034: door_02_hinge_01
+    100036: door_02_hinge_01 1
+    100038: door_02_hinge_02
+    100040: door_02_hinge_02 1
+    100042: door_02_hinge_03
+    100044: door_02_hinge_03 1
+    100046: door_02_hinge_closet_01
+    100048: door_02_hinge_closet_02
+    100050: door_02_hinge_closet_03
+    100052: door_02_knob
+    100054: door_02_rotation
+    100056: door_03
+    100058: door_03_hinge_01
+    100060: door_03_hinge_01 1
+    100062: door_03_hinge_02
+    100064: door_03_hinge_02 1
+    100066: door_03_hinge_03
+    100068: door_03_hinge_03 1
+    100070: door_03_hinge_closet_01
+    100072: door_03_hinge_closet_02
+    100074: door_03_hinge_closet_03
+    100076: door_03_knob
+    100078: door_03_rotation
+    100080: drawer_01
+    100082: drawer_02
+    100084: drawer_03
+    100086: drawer_04
+    100088: drawer_05
+    100090: drawer_06
+    100092: her_drawers
+    100094: his_drawers
+    100096: //RootNode
+    100098: wardrobe_structure_01
+    100100: wardrobe_structure_02
+    400000: closet_door
+    400002: closet_door 1
+    400004: closet_door 2
+    400006: coatHangerBar
+    400008: door_01
+    400010: door_01_hinge_01
+    400012: door_01_hinge_01 1
+    400014: door_01_hinge_02
+    400016: door_01_hinge_02 1
+    400018: door_01_hinge_03
+    400020: door_01_hinge_03 1
+    400022: door_01_hinge_closet_01
+    400024: door_01_hinge_closet_02
+    400026: door_01_hinge_closet_03
+    400028: door_01_knob
+    400030: door_01_rotation
+    400032: door_02
+    400034: door_02_hinge_01
+    400036: door_02_hinge_01 1
+    400038: door_02_hinge_02
+    400040: door_02_hinge_02 1
+    400042: door_02_hinge_03
+    400044: door_02_hinge_03 1
+    400046: door_02_hinge_closet_01
+    400048: door_02_hinge_closet_02
+    400050: door_02_hinge_closet_03
+    400052: door_02_knob
+    400054: door_02_rotation
+    400056: door_03
+    400058: door_03_hinge_01
+    400060: door_03_hinge_01 1
+    400062: door_03_hinge_02
+    400064: door_03_hinge_02 1
+    400066: door_03_hinge_03
+    400068: door_03_hinge_03 1
+    400070: door_03_hinge_closet_01
+    400072: door_03_hinge_closet_02
+    400074: door_03_hinge_closet_03
+    400076: door_03_knob
+    400078: door_03_rotation
+    400080: drawer_01
+    400082: drawer_02
+    400084: drawer_03
+    400086: drawer_04
+    400088: drawer_05
+    400090: drawer_06
+    400092: her_drawers
+    400094: his_drawers
+    400096: //RootNode
+    400098: wardrobe_structure_01
+    400100: wardrobe_structure_02
+    2300000: closet_door
+    2300002: closet_door 1
+    2300004: closet_door 2
+    2300006: coatHangerBar
+    2300008: door_01_hinge_01
+    2300010: door_01_hinge_01 1
+    2300012: door_01_hinge_02
+    2300014: door_01_hinge_02 1
+    2300016: door_01_hinge_03
+    2300018: door_01_hinge_03 1
+    2300020: door_01_hinge_closet_01
+    2300022: door_01_hinge_closet_02
+    2300024: door_01_hinge_closet_03
+    2300026: door_01_knob
+    2300028: door_02_hinge_01
+    2300030: door_02_hinge_01 1
+    2300032: door_02_hinge_02
+    2300034: door_02_hinge_02 1
+    2300036: door_02_hinge_03
+    2300038: door_02_hinge_03 1
+    2300040: door_02_hinge_closet_01
+    2300042: door_02_hinge_closet_02
+    2300044: door_02_hinge_closet_03
+    2300046: door_02_knob
+    2300048: door_03_hinge_01
+    2300050: door_03_hinge_01 1
+    2300052: door_03_hinge_02
+    2300054: door_03_hinge_02 1
+    2300056: door_03_hinge_03
+    2300058: door_03_hinge_03 1
+    2300060: door_03_hinge_closet_01
+    2300062: door_03_hinge_closet_02
+    2300064: door_03_hinge_closet_03
+    2300066: door_03_knob
+    2300068: drawer_01
+    2300070: drawer_02
+    2300072: drawer_03
+    2300074: drawer_04
+    2300076: drawer_05
+    2300078: drawer_06
+    2300080: wardrobe_structure_01
+    2300082: wardrobe_structure_02
+    3300000: closet_door
+    3300002: closet_door 1
+    3300004: closet_door 2
+    3300006: coatHangerBar
+    3300008: door_01_hinge_01
+    3300010: door_01_hinge_01 1
+    3300012: door_01_hinge_02
+    3300014: door_01_hinge_02 1
+    3300016: door_01_hinge_03
+    3300018: door_01_hinge_03 1
+    3300020: door_01_hinge_closet_01
+    3300022: door_01_hinge_closet_02
+    3300024: door_01_hinge_closet_03
+    3300026: door_01_knob
+    3300028: door_02_hinge_01
+    3300030: door_02_hinge_01 1
+    3300032: door_02_hinge_02
+    3300034: door_02_hinge_02 1
+    3300036: door_02_hinge_03
+    3300038: door_02_hinge_03 1
+    3300040: door_02_hinge_closet_01
+    3300042: door_02_hinge_closet_02
+    3300044: door_02_hinge_closet_03
+    3300046: door_02_knob
+    3300048: door_03_hinge_01
+    3300050: door_03_hinge_01 1
+    3300052: door_03_hinge_02
+    3300054: door_03_hinge_02 1
+    3300056: door_03_hinge_03
+    3300058: door_03_hinge_03 1
+    3300060: door_03_hinge_closet_01
+    3300062: door_03_hinge_closet_02
+    3300064: door_03_hinge_closet_03
+    3300066: door_03_knob
+    3300068: drawer_01
+    3300070: drawer_02
+    3300072: drawer_03
+    3300074: drawer_04
+    3300076: drawer_05
+    3300078: drawer_06
+    3300080: wardrobe_structure_01
+    3300082: wardrobe_structure_02
+    4300000: closet_door
+    4300002: door_01_hinge_01
+    4300004: door_01_hinge_02
+    4300006: door_01_hinge_03
+    4300008: door_01_knob
+    4300010: door_01_hinge_closet_01
+    4300012: door_01_hinge_closet_02
+    4300014: door_01_hinge_closet_03
+    4300016: door_01_hinge_01
+    4300018: door_01_hinge_02
+    4300020: door_01_hinge_03
+    4300022: closet_door
+    4300024: door_02_hinge_01
+    4300026: door_02_hinge_02
+    4300028: door_02_hinge_03
+    4300030: door_02_knob
+    4300032: door_02_hinge_closet_01
+    4300034: door_02_hinge_closet_02
+    4300036: door_02_hinge_closet_03
+    4300038: door_02_hinge_01
+    4300040: door_02_hinge_02
+    4300042: door_02_hinge_03
+    4300044: closet_door
+    4300046: door_03_hinge_01
+    4300048: door_03_hinge_02
+    4300050: door_03_hinge_03
+    4300052: door_03_knob
+    4300054: door_03_hinge_closet_01
+    4300056: door_03_hinge_closet_02
+    4300058: door_03_hinge_closet_03
+    4300060: door_03_hinge_01
+    4300062: door_03_hinge_02
+    4300064: door_03_hinge_03
+    4300066: coatHangerBar
+    4300068: drawer_01
+    4300070: drawer_02
+    4300072: drawer_03
+    4300074: drawer_04
+    4300076: drawer_05
+    4300078: drawer_06
+    4300080: wardrobe_structure_02
+    4300082: wardrobe_structure_01
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  userData: 
