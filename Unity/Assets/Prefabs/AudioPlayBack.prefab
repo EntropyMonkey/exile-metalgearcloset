@@ -13,6 +13,7 @@ GameObject:
   - 114: {fileID: 11400002}
   - 114: {fileID: 11400004}
   - 169: {fileID: 16900000}
+  - 165: {fileID: 16500000}
   m_Layer: 0
   m_Name: AudioPlayBack
   m_TagString: Untagged
@@ -126,6 +127,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   detectionVolume: 100
+--- !u!165 &16500000
+AudioHighPassFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_CutoffFrequency: 100
+  m_HighpassResonanceQ: 1
 --- !u!169 &16900000
 AudioLowPassFilter:
   m_ObjectHideFlags: 1
