@@ -15,6 +15,8 @@ public class StoryElement : MonoBehaviour
 
 	private int currentEvent = 0;
 
+	public string easyBranch = "";
+
 	private void Start()
 	{
 		//events = new List<StoryEvent>(GetComponents(typeof(StoryEvent)) as StoryEvent[]);
@@ -64,5 +66,12 @@ public class StoryElement : MonoBehaviour
 	private void SeqEventDoneHandler(StoryEvent e)
 	{
 		TriggerEventSequentially(++currentEvent);
+	}
+
+	public virtual string GetBranchChange(){
+		//TODO: override this one to change branches depending on the things that happen
+		if(easyBranch != "") return easyBranch;
+
+		return "";
 	}
 }

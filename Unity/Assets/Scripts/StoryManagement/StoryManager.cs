@@ -1,11 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 
 public class StoryManager : MonoBehaviour
 {
-	[SerializeField]
 	private List<StoryElement> storyElements;
+
+	public List<StoryElement> mainStoryBranch;
+	public List<StoryBranch> additionalBranches;
 
 	private int currentElement = 0;
 
@@ -13,6 +16,7 @@ public class StoryManager : MonoBehaviour
 	void Start()
 	{
 		currentElement = 0;
+		storyElements = mainStoryBranch;
 	}
 
 	void OnGUI()
@@ -28,6 +32,8 @@ public class StoryManager : MonoBehaviour
 		if (justFinished)
 			justFinished.OnDone -= PlayNextElement;
 
+		SwitchToBranch(justFinished.GetBranchChange());
+
 		storyElements[currentElement].Play();
 
 		if (currentElement < storyElements.Count)
@@ -39,4 +45,18 @@ public class StoryManager : MonoBehaviour
 
 		currentElement++;
 	}
+
+	void SwitchToBranch(string id){
+		if(id==""){
+			storyElements = mainStoryBranch;
+			return;
+		}
+		storyElements = additionalBranches.First(br => br.id == id).storyElements;
+	}
+}
+
+[System.Serializable]
+public class StoryBranch{
+	public string id;
+	public List<StoryElement> storyElements;
 }
