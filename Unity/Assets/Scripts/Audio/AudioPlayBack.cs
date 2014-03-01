@@ -15,7 +15,7 @@ public class AudioPlayBack : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		print ("TEST");
-		StartCoroutine(PlayInput());
+		//StartCoroutine(PlayInput());
 	}
 	
 	// Update is called once per frame

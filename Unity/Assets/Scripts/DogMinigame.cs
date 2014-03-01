@@ -36,7 +36,7 @@ public class DogMinigame : MonoBehaviour
 
 	public System.Action GameOver;
 
-	void Start ()
+	private void Start ()
 	{
 		Closet.GetInstance().onClosetSound += OnClosetSound;
 		Closet.GetInstance().onPlayerHidden += OnPlayerHidden;
@@ -50,7 +50,7 @@ public class DogMinigame : MonoBehaviour
 		GameOver();
 	}
 	
-	IEnumerator UpdateAudioCapture ()
+	private IEnumerator UpdateAudioCapture ()
 	{
 		yield return new WaitForSeconds(waitUntilStart);
 		running = true;
@@ -95,7 +95,7 @@ public class DogMinigame : MonoBehaviour
 		}
 	}
 	
-	IEnumerator StartScratching(){
+	private IEnumerator StartScratching(){
 		//start scratching
 		StartCoroutine("ScratchStuff");
 		
@@ -111,7 +111,7 @@ public class DogMinigame : MonoBehaviour
 		}
 	}
 	
-	IEnumerator ScratchStuff(){
+	private IEnumerator ScratchStuff(){
 		while(running){
 			if(!otherAudio.isPlaying)
 			{
@@ -124,7 +124,7 @@ public class DogMinigame : MonoBehaviour
 		
 	}
 	
-	IEnumerator StartGrowling(){
+	private IEnumerator StartGrowling(){
 		//stop scratching
 		scratchAudio.Stop();
 		StopCoroutine("StartScratching");
@@ -143,7 +143,7 @@ public class DogMinigame : MonoBehaviour
 		
 	}
 	
-	void Detected(){
+	private void Detected(){
 		StopCoroutine("UpdateAudioCapture");
 		StopCoroutine("StartScratching");
 		StopCoroutine("ScratchStuff");
@@ -252,7 +252,7 @@ public class DogMinigame : MonoBehaviour
 	
 #if UNITY_EDITOR
 	public bool showDebug = true;
-	void OnGUI(){
+	private void OnGUI(){
 		if(!showDebug)return;
 		GUILayout.Box("Keep Quiet time: " + keepQuietTime);
 		GUILayout.Box("Being Noisy: " + timeThatThePlayerIsBeingNoisy);

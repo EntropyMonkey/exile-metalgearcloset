@@ -21,4 +21,9 @@ public class Closet : MonoBehaviour
 	{
 		if (!instance) instance = this;
 	}
+
+	private void Start()
+	{
+		ovrController = GameObject.Find("ORCamera").GetComponent<OVRCameraController>();
+	}
 }

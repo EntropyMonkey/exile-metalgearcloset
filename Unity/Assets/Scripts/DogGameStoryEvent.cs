@@ -11,10 +11,10 @@ public class DogGameStoryEvent : StoryEvent {
 		DogMinigame game = (GameObject.Instantiate(dogGame) as GameObject).GetComponent<DogMinigame>();
 		game.storyEvent = this;
 
-		game.GameOver += gameOver;
+		game.GameOver += GameOver;
 	}
 
-	void gameOver()
+	private void GameOver()
 	{
 		OnDone(this);
 		SoundManager.Instance.playHeartBeats = false;
