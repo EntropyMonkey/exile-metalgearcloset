@@ -11,13 +11,13 @@ public class PlayDialogueEvent : StoryEvent
 
 	public override void Trigger()
 	{
-		Debug.Log("talk.", this);
+		Debug.Log("talk:"+ this.dialogueClip.name, this);
 		SoundManager.Instance.PlaySound(dialogueClip, whoIsTalking.transform, true, HandleSoundFinished);
 	}
 
 	void HandleSoundFinished()
 	{
-		Debug.Log("done talking.", this);
+		Debug.Log("done talking:"+ this.dialogueClip.name, this);
 		OnDone(this);
 	}
 }
