@@ -66,8 +66,6 @@ public class CoatHide : MonoBehaviour {
 				:cRight;
 		coatLeft.localPosition = -coatRight.localPosition;
 		
-		//isHiding = (Mathf.Abs(orientation.y) >= orientationYThreshold && position.y <= positionYThreshold);	
-		
 		// move coat parts accordingl
 		if(isHiding && !calledHiding)
 		{

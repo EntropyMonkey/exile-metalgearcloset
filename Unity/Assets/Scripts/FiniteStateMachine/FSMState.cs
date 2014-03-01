@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class FSMState<T> : MonoBehaviour
+public abstract class FSMState<T> : MonoBehaviour
 {
 	public virtual void Enter(T owner)
 	{

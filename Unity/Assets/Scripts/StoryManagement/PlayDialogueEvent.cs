@@ -15,7 +15,7 @@ public class PlayDialogueEvent : StoryEvent
 		SoundManager.Instance.PlaySound(dialogueClip, whoIsTalking.transform, true, HandleSoundFinished);
 	}
 
-	void HandleSoundFinished()
+	private void HandleSoundFinished()
 	{
 		Debug.Log("done talking.", this);
 		OnDone(this);
