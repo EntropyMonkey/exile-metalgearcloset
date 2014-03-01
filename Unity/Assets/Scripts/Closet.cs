@@ -9,6 +9,8 @@ public class Closet : MonoBehaviour
 	// player hiding in closet through camera movement
 	public System.Action onPlayerHidden;
 	public System.Action onPlayerUnhidden;
+
+	public OVRCameraController ovrController;
 	
 	private static Closet instance;
 	public static Closet GetInstance() {

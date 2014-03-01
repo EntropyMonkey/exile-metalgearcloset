@@ -99,16 +99,7 @@ public class CameraFade : MonoBehaviour
 		instance.m_FadeTexture.Apply();
 	}
  
- 	/// <summary>
- 	/// Starts the fade from color newScreenOverlayColor. If isFadeIn, start fully opaque, else start transparent.
- 	/// </summary>
- 	/// <param name='newScreenOverlayColor'>
- 	/// Target screen overlay Color.
- 	/// </param>
- 	/// <param name='fadeDuration'>
- 	/// Fade duration.
- 	/// </param>
-	public static void StartAlphaFade(Color newScreenOverlayColor, bool isFadeIn, float fadeDuration )
+ 	public static void StartAlphaFade(Color newScreenOverlayColor, bool isFadeIn, float fadeDuration )
 	{
 		if (fadeDuration <= 0.0f)		
 		{
@@ -129,18 +120,6 @@ public class CameraFade : MonoBehaviour
 		}
 	}
  
-	/// <summary>
-	/// Starts the fade from color newScreenOverlayColor. If isFadeIn, start fully opaque, else start transparent, after a delay.
-	/// </summary>
-	/// <param name='newScreenOverlayColor'>
-	/// New screen overlay color.
-	/// </param>
-	/// <param name='fadeDuration'>
-	/// Fade duration.
-	/// </param>
-	/// <param name='fadeDelay'>
-	/// Fade delay.
-	/// </param>
 	public static void StartAlphaFade(Color newScreenOverlayColor, bool isFadeIn, float fadeDuration, float fadeDelay )
 	{
 		if (fadeDuration <= 0.0f)		
@@ -164,21 +143,6 @@ public class CameraFade : MonoBehaviour
 		}
 	}
  
-	/// <summary>
-	/// Starts the fade from color newScreenOverlayColor. If isFadeIn, start fully opaque, else start transparent, after a delay, with Action OnFadeFinish.
-	/// </summary>
-	/// <param name='newScreenOverlayColor'>
-	/// New screen overlay color.
-	/// </param>
-	/// <param name='fadeDuration'>
-	/// Fade duration.
-	/// </param>
-	/// <param name='fadeDelay'>
-	/// Fade delay.
-	/// </param>
-	/// <param name='OnFadeFinish'>
-	/// On fade finish, doWork().
-	/// </param>
 	public static void StartAlphaFade(Color newScreenOverlayColor, bool isFadeIn, float fadeDuration, float fadeDelay, Action OnFadeFinish )
 	{
 		if (fadeDuration <= 0.0f)		
@@ -202,13 +166,13 @@ public class CameraFade : MonoBehaviour
 		}
 	}
  
-	void Die()
+	private void Die()
 	{
 		mInstance = null;
 		Destroy(gameObject);
 	}
  
-	void OnApplicationQuit()
+	private void OnApplicationQuit()
 	{
 		mInstance = null;
 	}

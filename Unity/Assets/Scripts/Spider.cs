@@ -20,9 +20,9 @@ public class Spider : MonoBehaviour {
 	
 	private Vector3 lastPosition;
 	
-	private OVRCameraController ovrController;
-	
 	private Quaternion lastOrientation;
+
+	public float destroyTime = 2f;
 	
 	private void Start () {
 		move = true;
@@ -32,15 +32,13 @@ public class Spider : MonoBehaviour {
         transform.position = path[pathCounter].position;
 		lastPosition = transform.position;
 		
-		ovrController = transform.root.GetComponent<OVRCameraController>();
-		
         StartCoroutine(PerformRun());
     }
     
     private void Update () {
         if(!alive)
         {
-            transform.Translate(Vector3.up * movementSpeed * 10.0f);
+            transform.Translate(Vector3.up * movementSpeed);
             StartCoroutine(WaitDestroy());
         }
 		if(move)
@@ -93,7 +91,7 @@ public class Spider : MonoBehaviour {
     {
 		// perform shake check
 		Quaternion curOrientation = new Quaternion();
-		ovrController.GetCameraOrientation(ref curOrientation);
+		Closet.GetInstance().ovrController.GetCameraOrientation(ref curOrientation);
         float diff = Vector3.Angle(curOrientation.eulerAngles, lastOrientation.eulerAngles);
 
         if(shakeCounter >= 5)
@@ -106,8 +104,9 @@ public class Spider : MonoBehaviour {
     
     private IEnumerator WaitDestroy()
     {
-        yield return new WaitForSeconds(2);
-		storyEvent.OnDone(storyEvent);
+        yield return new WaitForSeconds(destroyTime);
+		if(storyEvent.OnDone != null)
+			storyEvent.OnDone(storyEvent);
 		Destroy(this.gameObject);
     }
 }
